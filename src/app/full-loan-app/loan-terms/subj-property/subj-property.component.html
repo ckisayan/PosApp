@@ -1,0 +1,93 @@
+<div class="workspace">
+  <span class="workspaceHeader">Subject Property Address</span>
+  <div>
+    <mat-checkbox class="form-checkbox" [(ngModel)]="subjProp.SubjPropertyToBeDetermined" name="subjPropertyToBeDetermined">Is Subject property to be deterimind?</mat-checkbox>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Current Address" required [(ngModel)]="subjProp.StreetAddr1"
+        name="streetAddr1">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Current Address 2" [(ngModel)]="subjProp.StreetAddr2"
+        name="streetAddr2">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Zip code" required [(ngModel)]="subjProp.BorCurrentAddrZipCode"
+        name="borCurrentAddZipCode">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Property County" required [(ngModel)]="subjProp.PropertyCounty"
+        name="borCurrentAddZipCode">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="City" [(ngModel)]="subjProp.BorPrimaryAddrCity" name="borPrimaryAddrCity">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="State" [(ngModel)]="subjProp.BorPrimaryAddrState" name="borPrimaryAddrState">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Number of Units" required [(ngModel)]="subjProp.NumberOfUnits"
+        name="numberOfUnits">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Year Built" required [(ngModel)]="subjProp.PropertyYearBuilt"
+        name="propertyYearBuilt">
+    </mat-form-field>
+  </div>
+
+  <div class="onerow">
+    <!--
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="impoundsWaivedOnExistingLoanFlag" [(ngModel)]="subjProp.impoundsWaivedOnExistingLoanFlag"
+        placeholder="Impounds waived on existing Loan?" required>
+        <mat-option></mat-option>
+        <mat-option value="Yes">Yes</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    -->
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="propertyType" [(ngModel)]="subjProp.PropertyType" placeholder="Property Type">
+        <mat-option value="SFR">Single Fam Detached</mat-option>
+        <mat-option value="SingleFamilyAttached">Single Fam Attached</mat-option>
+        <mat-option value="TwoToFourUnits">2-4 Units</mat-option>
+        <mat-option value="ManufucturedHome">Manufactured Home</mat-option>
+        <mat-option value="PUD">Pud</mat-option>
+        <mat-option value="LowRiseCondo">Low Rise Condo</mat-option>
+        <mat-option value="HighRiseCondo">High Rise Condo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div id="RefinanceInfoSection">
+    <!--only applicable for refi-->
+    <div class="onerow">
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Original Purchase date" required [(ngModel)]="subjProp.OriginatlPurchaseDate"
+          name="OriginatlPurchaseDate">
+      </mat-form-field>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Original Purchase Price" [(ngModel)]="subjProp.OriginalPurchasePriceAmt"
+          name="OriginalPurchasePriceAmt">
+      </mat-form-field>
+    </div>
+    <div class="onerow">
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveSubjectProperty('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveSubjectProperty('next')">Next</button>
+</div>

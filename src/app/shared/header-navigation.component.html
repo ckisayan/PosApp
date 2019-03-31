@@ -1,0 +1,30 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+  <span style="color: darkblue;font-weight:bold">{{screenName}}</span>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item  routerLink="/dashboard-main" (click)="onOpenMenu(menu, 'Dashboard')">
+    <mat-icon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </button>
+  <button mat-menu-item style="width: 220px"  routerLink="/home" (click)="onOpenMenu(menu, 'Summary')">
+    <mat-icon>toc</mat-icon>
+    <span>Summary</span>
+  </button>
+  <button mat-menu-item routerLink="/pricer-quick" (click)="onOpenMenu(menu, 'Quick Pricer')">
+    <mat-icon>star</mat-icon>
+    <span>Quick Pricer</span>
+  </button>
+  <button mat-menu-item (click)="onOpenMenu(menu, 'Preferences')" >
+    <mat-icon>help</mat-icon>
+    <span>Preferences</span>
+  </button>
+  <button  mat-menu-item (click)="onOpenMenu(menu, 'Log-Off')">
+      <mat-icon>flight</mat-icon>
+      <span>Log Off {{name}}</span>
+    </button>
+    <button *ngIf="isLogOffAvailable" mat-menu-item (click)="onOpenMenu(menu, 'Log-Off')">
+      <mat-icon>flight</mat-icon>
+      <span>extra</span>
+    </button>
+</mat-menu>

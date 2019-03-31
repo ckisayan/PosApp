@@ -1,0 +1,60 @@
+<div class="workspace">
+    <span class="workspaceHeader">Primary Borrower Address</span>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Current Address" required [(ngModel)]="borrowerInfo.BorCurrentAddress1"
+        name="borCurrentAddress1">
+      <mat-error>
+        Address is requied!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Current Address 2" [(ngModel)]="borrowerInfo.BorCurrentAddress2"
+        name="borCurrentAddress2">
+      <mat-error>
+        Address is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Zip code" required [(ngModel)]="borrowerInfo.BorCurrentAddrZipCode"
+        name="borCurrentAddZipCode">
+      <mat-error>
+        Zip is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="City" required [(ngModel)]="borrowerInfo.BorPrimaryAddrCity"
+        name="borPrimaryAddrCity">
+      <mat-error>
+        City is requied!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="State" required [(ngModel)]="borrowerInfo.BorPrimaryAddrState"
+        name="borPrimaryAddrState">
+      <mat-error>
+        State is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Years lived at this address" required [(ngModel)]="borrowerInfo.BorYearAtPrimaryAddress"
+        name="borYearAtPrimaryAddress">
+      <mat-error>
+        Years lieved at this address is requied!
+      </mat-error>
+    </mat-form-field>
+    <mat-checkbox class="form-checkbox" [(ngModel)]="borrowerInfo.BorMailingAddrIsSameAsPrimaryAddr" name="borMailingAddrIsSameAsPrimaryAddr">My mailing address is the same as my current address</mat-checkbox>
+  </div>
+</div>
+
+<div>
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveCustomerAddress('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveCustomerAddress('next')">Next</button>
+</div>

@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+  crossorigin="anonymous">
+
+<div class="workspaceAssets">
+  <div>
+    <span class="workspaceHeader">Assets Details</span>
+    <div class="buttonRight">
+      <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveAssetsDetails('OrderVOA')">Ordor VOA</button>
+      <p class="pullmessage">Last order placed on 7/25/2018 8:40:28 AM</p>
+    </div>
+    <div class="asset_mainDiv">
+      <div class="asset-tableDiv">
+        <table class="asset-tabelMain asset_tableDisplayNone" id="assetsTable">
+          <thead>
+
+            <tr class="table_row">
+              <th class="table_hedingTxt asset-paddingLeft"></th>
+              <th class="table_hedingTxt "></th>
+              <th class="table_hedingTxt ">Name</th>
+              <th class="table_hedingTxt">Account Type</th>
+              <th class="table_hedingTxt table_colLeftAlign">Account Number</th>
+              <th class="table_hedingTxt table_colrightAlign">Balance/Value</th>
+              <th class="table_hedingTxt"></th>
+              <th class="table_hedingTxt"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="table_row add_clickForRow">
+              <td class="table_bodyTxt asset-paddingLeft" ng-reflect-title="Mary Homeowner" title="Mary Homeowner">
+                <span class="fa fa-money-bill-alt"></span>
+              </td>
+              <td class="table_bodyTxt " title="Bank Account">
+
+              </td>
+              <td class="table_bodyTxt ">Bank Of America</td>
+              <td class="table_bodyTxt ">Checking</td>
+              <td class="table_bodyTxt table_colLeftAlign">***1234</td>
+              <td class="table_bodyTxt table_colrightAlign">$ 150,000.00</td>
+              <td class="table_bodyTxt " title="Edit">
+                <span ng-reflect-ng-class="[object Object]" class="fa fa-angle-up table_editSpan"></span>
+              </td>
+              <td class="table_bodyTxt asset-paddingLeft" title="Delete">
+                <span class="fa fa-trash table_deleteSpan"></span>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="table_row">
+              <td class="table_totCell_td asset-paddingLeft"></td>
+              <td class="table_totCell_td"></td>
+              <td class="table_totCell_td"></td>
+              <td class="table_totCell_td"></td>
+              <td class="table_totCell_td"></td>
+              <td class="table_totCell_td">
+                <span class="table_totHedTxt table_colrightAlign">Total Assets</span>
+                <span class="table_totAmtTxt table_colrightAlign">$ 150,000.00</span>
+              </td>
+              <td class="table_totCell_td"></td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="Add_Row_contDiv">
+          <span class="Add_detail_span" (click)="AddAnotherAcccountClicked()">+Add Another Asset</span>
+        </div>
+        <div class="focus_container" style="padding: 20px;" *ngIf="showAddEditLiabilities">
+          <span class="assetHeadSpan">Add Checkings and Savings Account for John Homeowner</span>
+          <div class="onerow">
+            <mat-form-field class="matformfield">
+              <mat-select class="form-control matformfield" name="" [(ngModel)]="placeholder" placeholder="Account Type" required>
+                <mat-option>Select One</mat-option>
+                <mat-option value="Saving">Saving</mat-option>
+                <mat-option value="Checking">Checking</mat-option>
+                <mat-option value="Saving">Gift</mat-option>
+                <mat-option value="Checking">401K</mat-option>
+                <mat-option value="Checking">Cash On Hand</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="Financial Institution Name" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+          </div>
+          <div class="onerow">
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="Address" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="Zip" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+          </div>
+          <div class="onerow">
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="City" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="State" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+          </div>
+          <div class="onerow">
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="Account Number" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+            <mat-form-field class="matformfield">
+              <input class="form-control" type="text" matInput placeholder="Total Amount" [(ngModel)]="placeholder" name="">
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 alignRight">
+              <button class="full1003-secondary-button" (click)="SaveCancelAssets('Cancel')">Cancel</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <button class="full1003-primary-button okBtn" (click)="SaveCancelAssets('Save')">Save</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="Add_Row_contDiv">
+          <div class="Add_AssetIcon_MainContDiv" *ngIf="dispAddAssetIcons">
+            <div>
+              <span class="Add_AssetHedSpan"> Click on the below icons to Add Assets</span>
+              <div class="addAssetGroup">
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'cs_accounts')">
+                  <span class="fa fa-money-bill-alt Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Bank Account</span>
+                </div>
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'stocks_and_bonds')">
+                  <span class="fa fa-chart-area Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Stock &amp; Bonds</span>
+                </div>
+
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'life_insurance')">
+                  <span class="fa fa-umbrella Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Life Insurance</span>
+                </div>
+
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'retirement')">
+                  <span class="fa fa-blind Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Retirement</span>
+                </div>
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'business')">
+                  <span class="fa fa-university Add_AssIconSpan "></span>
+                  <span class="Add_AssIconTxtSpan">Business</span>
+                </div>
+
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'cash_deposits')">
+                  <span class="fa fa-suitcase Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Cash Deposits</span>
+                </div>
+                <div ng-reflect-ng-class="[object Object]" class="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'auto_assets')">
+                  <span class="fa fa-car Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Auto Asset</span>
+                </div>
+                <div class="Add_AsstIconConvDiv" ng-reflect-klass="Add_AsstIconConvDiv" (click)="createAssetNew(this.curr_selectedUserId,'other_assets')">
+                  <span class="fa fa-ellipsis-h Add_AssIconSpan"></span>
+                  <span class="Add_AssIconTxtSpan">Other Assets</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveSssetsDetails('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveAssetsDetails('next')">Next</button>
+</div>

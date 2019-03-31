@@ -1,0 +1,19 @@
+@import url("..//../app-style.css");
+
+table {
+    width: 80%;
+    text-align: center;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+ 
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .CRTableHeader{
+      text-align: center;
+  }

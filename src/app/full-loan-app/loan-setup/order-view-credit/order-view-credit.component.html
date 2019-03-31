@@ -1,0 +1,56 @@
+<div class="workspace">
+
+  <div>
+    <span class="workspaceHeader">Order View Credit</span>
+  </div>
+  <div class="onerow">
+    Consent give to pull credit: &nbsp; &nbsp;
+    <mat-checkbox class="form-checkbox" [(ngModel)]="orderCredit.ConsentForPrimaryBorrwerFlag" name="consentForPrimaryBorrwerFlag">Primary </mat-checkbox>
+    <mat-checkbox class="form-checkbox" [(ngModel)]="orderCredit.ConsentForSpouseFlag" name="consentForSpouseFlag">Spouse</mat-checkbox>
+
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="typeOfCreditReport" [(ngModel)]="orderCredit.TypeOfCreditReport" placeholder="Type of Credit">
+        <mat-option value="No MI"></mat-option>
+        <mat-option value="LenderPaid">Soft Pull Credit</mat-option>
+        <mat-option value="BorrowerPaid">Single File Credit</mat-option>
+        <mat-option value="BorrowerPaid">Tri-merge Credit</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+
+  <div>
+    <table class="mat-elevation-z8">
+      <tr>
+        <th class="CRTableHeader">App Id</th>
+        <th class="CRTableHeader">Daten of Credit</th>
+        <th class="CRTableHeader">Credit Report PDF </th>
+      </tr>
+      <tr *ngFor="let CreditRpt of CREDIT_REPORT_DATA">
+          <td>{{CreditRpt.ApplicaitonIdentifier}}</td>
+        <td> {{CreditRpt.CreditReportDate}} </td>
+        <td><span (click)="openCreditReport()"> {{CreditRpt.CreditReportIdentifier}} - view Credit </span></td>
+        
+      </tr>
+    </table>
+  </div>
+  <!--
+  <table *ngFor="let CreditRpt of CREDIT_REPORT_DATA">
+    <tr>
+      <td> {{CreditRpt.CreditReportDate}}</td>
+      <td> {{CreditRpt.CreditReportIdentifier}}</td>
+    </tr>
+    </table>
+    -->
+
+
+</div>
+
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveOrderViewCredit('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveOrderViewCredit('next')">Next</button>
+</div>

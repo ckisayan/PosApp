@@ -1,0 +1,53 @@
+<div id="SpouseMailingAddress" class="workspace">    
+  <div>
+      <span class="workspaceHeader">Spouse Mailing Address</span>
+  </div>
+  <div id="mailingAddressDivSection">
+    <div>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Address 1" required [(ngModel)]="borrowerInfo.BorMailingAddress1"
+          name="borMailingAddress1">
+        <mat-error>
+          Address is requied!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Address 2" [(ngModel)]="borrowerInfo.BorMailingAddress2" name="borMailingAddress2">
+        <mat-error>
+          Address is requied!
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Enter Zip code" required [(ngModel)]="borrowerInfo.BorMailingAddrZipCode"
+          name="borMailingAddZipCode">
+        <mat-error>
+          Zip is requied!
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="City" required [(ngModel)]="borrowerInfo.BorMailingAddrCity"
+          name="borMailingAddrCity">
+        <mat-error>
+          City is requied!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="State" required [(ngModel)]="borrowerInfo.BorMailingAddrState"
+          name="borMailingAddrState">
+        <mat-error>
+          State is requied!
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+<div>
+    <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button fixedbutton" (click)="saveSpouseMailingAddr('previous')">Previous</button>
+    <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button fixedbutton" (click)="saveSpouseMailingAddr('next')">Next</button>
+  </div>

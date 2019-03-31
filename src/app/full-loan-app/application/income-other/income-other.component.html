@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+  crossorigin="anonymous">
+
+<div class="workspace">
+  <div>
+    <span class="workspaceHeader">Other Income (Monthly)</span>
+  </div>
+  <div class="oneRow">
+    <table class="emp-tableMain " id="otherIncomeTable">
+      <thead>
+        <tr class="table_row">
+          <th class="table_hedingTxt asset-paddingLeft"></th>
+          <th class="table_hedingTxt">Income Type</th>
+          <th class="table_hedingTxt table_colrightAlign">Monthly Earnings</th>
+          <th class="table_hedingTxt"></th>
+          <th class="table_hedingTxt"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="table_row add_clickForRow">
+          <td class="table_bodyTxt  asset-paddingLeftcustom" ng-reflect-title="Margaret" title="Margaret">
+            <span class="fa fa-user"></span>
+          </td>
+          <td class="table_bodyTxt ">Social Security/Disability Income</td>
+          <td class="table_bodyTxt table_colrightAlign">$ 1,232.00</td>
+          <td class="table_bodyTxt " title="Edit">
+            <span ng-reflect-ng-class="[object Object]" class="fa fa-angle-up table_editSpan">
+            </span>
+          </td>
+          <td class="table_bodyTxt asset-paddingLeft" title="Delete">
+            <span class="fa fa-trash table_EmpdeleteSpan"></span>
+          </td>
+        </tr>
+        <tr class="table_row add_clickForRow">
+          <td class="table_bodyTxt  asset-paddingLeftcustom" ng-reflect-title="Margaret" title="Margaret">
+            <span class="fa fa-user"></span>
+
+          </td>
+          <td class="table_bodyTxt ">Military Base Pay</td>
+          <td class="table_bodyTxt table_colrightAlign">$ 1,500.00</td>
+          <td class="table_bodyTxt " title="Edit">
+            <span ng-reflect-ng-class="[object Object]" class="fa fa-angle-up table_editSpan">
+            </span>
+          </td>
+          <td class="table_bodyTxt asset-paddingLeft" title="Delete">
+            <span class="fa fa-trash table_EmpdeleteSpan"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="Emp_Add_Row_contDiv">
+    <span class="Emp_Add_detail_span" (click)="addAnotherOtherIncome()">+Add Another Income</span>
+  </div>
+  <div class="empBorderDiv">&nbsp;</div>
+  <div *ngIf="addOtherIncome">
+    <div class="oneRow">
+      <mat-form-field class="matformfield">
+        <mat-select class="form-control matformfield" name="" [(ngModel)]="placeholder" placeholder="Income Type" required>
+          <mat-option>Select One</mat-option>
+          <mat-option value="AlimonyChildSupport">Alimony/Child Support</mat-option>
+          <mat-option value="MillitaryBase">Millitary Base</mat-option>
+          <mat-option value="PensionRetirementIncome">Pension/Retirement Income</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="matformfield">
+
+        <input class="form-control" type="text" matInput placeholder="Monthly Amount" [(ngModel)]="placeholder" name="">
+      </mat-form-field>
+    </div>
+    <div class="oneRow">
+
+      <button mat-raised-button class="fullLoanApp-secondary-button" (click)="saveOtherIncome('SaveClose')">Previous</button>
+
+      <button mat-raised-button class="fullLoanApp-primary-button" (click)="saveOtherIncome('Cancel')">Next</button>
+
+    </div>
+  </div>
+</div>
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveOtherIncome('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveOtherIncome('next')">Next</button>
+</div>

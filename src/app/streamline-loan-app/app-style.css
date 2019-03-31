@@ -1,0 +1,169 @@
+.matformfield{      
+    width: 320px;
+}
+.form-control {
+    display: block;      
+    font-weight: bolder;
+    width: 280px;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;   
+    box-shadow: none !important;
+    font-size: 16px !important;
+    font-family: Lato-Regular, sans-serif;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    font-weight: 500;
+    color: #173962;
+  }
+
+  .onerow{
+    height: 50px;
+    display: inline-flex;
+}
+
+
+.matformfieldLong{      
+    width: 480px;
+}
+.fullLoanApp-button-one {
+   text-align: center;
+}
+.fullLoanApp-primary-button {
+    background: #0091ff;
+    color: #ffffff;
+}
+.fullLoanApp-secondary-button {
+    background:gray;
+    color: #ffffff;
+}
+.fullLoanApp-button{
+    width: 200px;
+    padding-top: 7px;
+    padding-right: 16px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+    font-size: 16px;
+    font-family: Lato-Semibold, sans-serif;
+    font-weight: normal;
+    height: 40px;    
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px; /*   margin-right: 60px;    margin-left: 55px;*/
+    border: 0;
+}
+
+.mat-button-toggle {
+    background-color:white;
+    color:black;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius:  0px;
+    border-top-right-radius:  0px;
+    border-bottom-right-radius:  0px;
+  }
+
+  .mat-button-toggle-checked {
+    background-color: green;
+    color: white;
+  }
+
+  .fixedbuttonNext {
+    position: fixed;
+    top: 500px;
+    left: 900px; 
+}
+.fixedbuttonPrev {
+    position: fixed;
+    top: 500px;
+    left: 700px; 
+}
+.workspace{
+    height:375px;
+    border:1px solid tan;
+   
+}
+.partitionNextPrevButtons{       
+    border:1px solid tan;
+    text-align: right;
+}
+
+
+.side-nav-container {
+    width: 500px;
+    height: 400px;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+  .sectionNotClicked{
+    font-size: 20px;  
+  }
+  .sectionClicked{
+    background-color: lightskyblue;
+    font-size: 20px;
+  }
+  .side-menu-section-common{
+    padding: 5px;
+    border: 1px solid rgba(111, 111, 111, 0.50);
+  }
+  .side-menu-section-header{
+    background-color:darkblue;
+    color: whitesmoke;
+  }
+  .section-side-closer{  
+    font-size: 20px;
+    text-align: right
+  }
+  .div-main{
+    height:auto; 
+    margin:0 auto; 
+    border:1px solid lightgray;
+    width: 55%;
+    
+}
+.side-nav-container {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    border: 1px solid rgba(111, 111, 111, 0.50);
+  }
+  .workspaceHeader{
+    font-size: +2;
+    font-weight: bold;      
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.sidenav {
+    font-size: 16px;
+    padding: 3px;
+    background-color: whitesmoke;
+    width: 275ngpx;
+    border: 1px solid rgba(111, 111, 111, 0.50);
+    
+}
+
+.bottom-buttons{
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.workspacespinner{
+    text-align: center;
+
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  
+    
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #3fb53f;
+    }

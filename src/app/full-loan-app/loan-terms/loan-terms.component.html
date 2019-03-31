@@ -1,0 +1,32 @@
+<button mat-raised-button class="fullLoanApp-primary-button" (click)="openSideNavigation();">
+  Show Task</button>
+
+<mat-sidenav-container class="side-nav-container">
+  <mat-sidenav #loantermssidenav class="sidenav" mode="side" name="loantermssidenav">
+    <!--<section class="side-menu-section-common section-side-closer" (click)="loantermssidenav.close()">X</section>-->
+    <section class="side-menu-section-common side-menu-section-header">Loan Terms Workspace</section>
+    <section class="side-menu-section-common sectionClicked" (click)="navigateSideNavSection('propertyInfo')" #propertyInfo>Property Info</section>
+    <section class="side-menu-section-common sectionNotClicked" (click)="navigateSideNavSection('basicLoanInfo')" #basicLoanInfo>Loan Terms</section>
+    <section class="side-menu-section-common sectionNotClicked" (click)="navigateSideNavSection('loanProductPricing')" #loanProductPricing>Product & Pricing</section>
+    <section class="side-menu-section-common sectionNotClicked" (click)="navigateSideNavSection('loanFeeSheet')" #loanFeeSheet>Fee Sheet</section>
+    <section class="side-menu-section-common sectionNotClicked" (click)="navigateSideNavSection('loanScenarios')" #loanScenarios>Scenario</section>
+  </mat-sidenav>
+  <div class="div-main">
+    <div *ngIf="propertyInfoVisible">
+      <subj-property (childMenuEvent)="navigateNext($event)"></subj-property>
+    </div>
+    <div *ngIf="basicLoanInfoVisible">
+      <app-basic-loan-info (childMenuEvent)="navigateNext($event)"></app-basic-loan-info>
+    </div>
+    <div *ngIf="loanProductPricingVisible" id="loanProductPricingDiv">
+      <app-loan-product-pricing (childMenuEvent)="navigateNext($event)"></app-loan-product-pricing>
+    </div>
+    <div *ngIf="loanFeeSheetVisible" id="">
+      <loan-estimate-fees (childMenuEvent)="navigateNext($event)"></loan-estimate-fees>
+    </div>
+    <div *ngIf="loanScenariosVisible" id="">
+      <app-loan-product-pricing (childMenuEvent)="navigateNext($event)"></app-loan-product-pricing>
+    </div>
+
+  </div>
+</mat-sidenav-container>

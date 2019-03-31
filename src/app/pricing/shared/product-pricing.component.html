@@ -1,0 +1,47 @@
+<!-- products, Rate/APR, Payment, Discount Cost, Pricing, select button-->
+
+<table matSort class="table">
+  <tr>
+    <th mat-sort-header="choose">Choose</th>
+    <th mat-sort-header="name">Name</th>
+    <th mat-sort-header="rate">Rate/APR</th>
+    <th mat-sort-header="discountpoints">DiscPoints</th>
+    <th mat-sort-header="originationpoints">OrigPoints</th>
+    <th mat-sort-header="payment">Payment</th>
+  </tr>
+  <tr *ngFor="let product of productListFiltered">
+    <td>
+      <mat-checkbox class="example-margin"  [(ngModel)]="product.ProductSelected"
+     [align]="align" (change)="onClickOfProductChkBox(this)"
+     [disabled]="product.RecommendationType=='In-Eligible'">
+      </mat-checkbox>
+      <!-- [(checked)]="product.ProductSelected" [(indeterminate)]="product.ProductSelected"  id={{product.RateIdentifier}} name="chkboxProductedSelected" -->
+    </td>
+    <td>{{product.ProductName}}</td>
+    <td>{{product.RatePct|number:'1.3-3'}}/{{product.AprPct|number:'1.3-3'}}</td>
+    <td>{{product.DiscountsPointsPct|number:'1.3-3'}}</td>
+    <td>{{product.OriginationPointsPct|number:'1.3-3'}}</td>
+    <td>{{product.EstimateMoPayment|number:'1.2-2'}}</td>
+  </tr>  
+</table>
+<div id="actionButtonsForProductPricing" style="float:right;">
+  <mat-button-toggle-group #group="matButtonToggleGroup">
+    
+    <mat-button-toggle  value="DefaultFees" (click)="showDefaultFees()" >
+      <mat-icon>fee</mat-icon>
+      <span>Show Fees</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="EditScenario" (click)="EditScenario()">
+      <mat-icon>edit</mat-icon>
+      <span>Edit Scenario</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="SaveScenario" (click)="saveScenario()">
+      <mat-icon>save</mat-icon>
+      <span>Save Scenario</span>
+    </mat-button-toggle>
+    <mat-button-toggle value="CreateLoan" *ngIf="showCreateLoan">
+      <mat-icon>create</mat-icon>
+      <span>Create Loan</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

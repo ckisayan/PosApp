@@ -1,0 +1,115 @@
+@import url("..//../app-style.css");
+
+mat-grid-tile {
+    background: lightblue;
+  }
+
+table {
+    background-color: transparent;
+}
+/*
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    border-color: grey;
+    box-sizing: border-box;
+    height: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-stroke: 1px transparent;
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.43;
+}
+
+.emp_mainDiv {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.isLoader .add_clickForRow {
+    cursor: pointer;
+}
+
+.isLoader .table_row {
+    border-bottom: 1px solid #b9c5db;
+}
+*/
+.table_row {
+    border-bottom: 1px solid #b9c5db;
+    box-sizing: border-box;
+}
+th {
+    padding: 15px;
+}
+td {
+    padding: 15px;
+}
+
+.fa-user:before {
+    content: "\f007";
+}
+/*
+isLoader .table_hedingTxt {
+    font-family: "Lato-Semibold";
+    font-size: 18px;
+    color: #193a60;
+    padding-bottom: 16px;
+}
+*/
+.emp-tableMain {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.empBorderDiv {
+    border-bottom: solid 3px #0f6e2d;
+    position: relative;
+    margin: auto;
+    padding-bottom: 25px;
+    width: 100%;
+}
+
+
+.incomeGridLeft{        
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;   
+}
+.incomeGridRight{        
+    display: inline-block;
+    width: 50%;
+    float: right;
+    padding-right: 10px;
+    border-left: 1px solid #c5ced7;
+    padding-left: 10px;   
+}
+.gridHeading{
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 28px;
+    font-family: Lato-Regular, sans-serif;
+    color: #193a60;
+}
+.Emp_Add_Row_contDiv {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.Emp_Add_detail_span {
+    font-family: "Lato-regular";
+    color: #0091ff;
+    font-size: 14px;
+    text-decoration: underline;
+    float: right;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.otherIncome{
+    height: 50px;
+    display: inline-flex;
+    width: 100%;
+}

@@ -1,0 +1,38 @@
+
+<p *ngIf="!filtersLoaded" class="text-center">
+        <mat-spinner></mat-spinner>
+    </p>
+
+<mat-card>
+    <mat-card-content>        
+        <mat-tab-group class="eligibile-tab-group">
+            <mat-tab label="Eligible">
+                <ng-template mat-tab-label>
+                    <mat-icon>alarm</mat-icon>
+                    <span>Eligible</span>
+                </ng-template>
+                
+                <div class="EligibleTab">
+                    <div *ngIf="filtersLoaded | async">
+                        <app-product-pricing [productListFiltered]="eligibleProductList" ></app-product-pricing>
+                    </div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="In-Eligible">
+                <ng-template mat-tab-label>
+                    <mat-icon>assignment</mat-icon>
+                    <span>
+                        In-Eligible
+                    </span>
+                </ng-template>
+                <div class="In-Eligible">
+                    <app-product-pricing [productListFiltered]="inEligibleProductList" ></app-product-pricing>
+
+
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+    </mat-card-content>
+</mat-card>

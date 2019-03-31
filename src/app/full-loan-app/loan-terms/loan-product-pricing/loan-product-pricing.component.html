@@ -1,0 +1,9 @@
+
+<span *ngIf="!apiLoaded" class="workspacespinner">
+    <mat-spinner class="workspacespinner" color="warn" [diameter]="30" [value]="10" [mode]="determinate"></mat-spinner>
+</span>
+
+<mat-card>
+<div class="workspace">
+  <app-product-pricing [productListFiltered]="productList"></app-product-pricing>
+</div>

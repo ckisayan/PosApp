@@ -1,0 +1,58 @@
+@import url("..//../app-style.css");
+
+.workspaceReo{
+    height:775px;
+    width: 100%;
+    border:1px solid tan;
+    overflow: auto;
+   
+}
+
+.reoMainDiv {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.reoBorderDiv {
+    border-bottom: solid 3px #c5ced7;
+    position: relative;
+    margin: auto;
+    padding-bottom: 25px;
+}
+.reoTableDiv{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.reoTabelMain {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table_row{        
+    border-bottom: 1px solid #b9c5db;
+}
+
+.table_bodyTxt{
+    font-family: "Lato-Regular";
+    font-size: 14px; 
+    color: #193a60;       
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+ }
+ .Add_Row_contDiv{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    display: block;
+    width: 100%;
+ }
+ .Add_detail_span{        
+     font-family: "Lato-regular";
+     color: #0091ff;
+     font-size: 14px;
+     text-decoration: underline;
+     float: right;
+     cursor: pointer;
+     font-weight: 700
+ }

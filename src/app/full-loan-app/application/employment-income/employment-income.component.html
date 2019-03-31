@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+  crossorigin="anonymous">
+
+<div class="workspaceEmp">
+  <div>
+    <span class="workspaceHeader">Employment-Income (Monthly)</span>
+    <div class="buttonRight">
+      <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveEmploymentIncome('OrderVOI')">Ordor VOI</button>
+    </div>
+  </div>
+
+  <div class="onerow">
+    <!--<mat-grid-list [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)">
+          <mat-grid-tile>1</mat-grid-tile>
+          <mat-grid-tile>2</mat-grid-tile>
+          <mat-grid-tile>3</mat-grid-tile>
+          <mat-grid-tile>4</mat-grid-tile>
+          <mat-grid-tile>4</mat-grid-tile>
+          <mat-grid-tile>4</mat-grid-tile>
+        </mat-grid-list>
+      -->
+    <div class="emp_mainDiv">
+      <table class="emp-tabelMain" id="employmentTable">
+        <thead>
+          <tr class="table_row">
+            <th class="table_hedingTxt paddingLeftcustom"></th>
+            <th class="table_hedingTxt">Employment Status</th>
+            <th class="table_hedingTxt">Employment Period</th>
+            <th class="table_hedingTxt">Employer Name</th>
+            <th class="table_hedingTxt table_colrightAlign">Monthly Income</th>
+            <th class="table_hedingTxt"></th>
+            <th class="table_hedingTxt paddingLeft"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table_row add_clickForRow">
+            <td class="table_bodyTxt  paddingLeftcustom" ng-reflect-title="chris" title="chris">
+              <span class="fa fa-user"></span>
+            </td>
+            <td class="table_bodyTxt">Current</td>
+            <td class="table_bodyTxt">12/6/2010 - Present</td>
+            <td class="table_bodyTxt">Chris Bank</td>
+            <td class="table_bodyTxt table_colrightAlign">$ 15,000.00
+            </td>
+            <td class="table_bodyTxt" title="Edit">
+              <span ng-reflect-ng-class="[object Object]" class="fa fa-angle-up table_editSpan">
+              </span>
+            </td>
+            <td class="table_bodyTxt asset-paddingLeft" title="Delete">
+              <span class="fa fa-trash table_EmpdeleteSpan"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="Emp_Add_Row_contDiv">
+    <span class="Emp_Add_detail_span" (click)="addAnotherEmploymentClicked()">+Add Another Employment</span>
+  </div>
+  <div class="onerow">
+    <span class="workspaceHeader">Edit Current Employment for John Homeowner</span>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="" [(ngModel)]="placeholder" placeholder="Employment Type" required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Current">Current</mat-option>
+        <mat-option value="Previious">Previous</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox class="form-checkbox" [(ngModel)]="placeholder" name="SelfEmployedFlag">Self-Employed </mat-checkbox>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Employer Name" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Postiion/Title/Type of Business" [(ngModel)]="placeholder"
+        name="">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Start Date" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Yrs on this Job" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Employer Address" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Zip" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="City" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="State" [(ngModel)]="placeholder" name="">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Business Phone Number" [(ngModel)]="placeholder" name="">
+      </mat-form-field>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="Monthly Income" [(ngModel)]="placeholder" name="">
+      </mat-form-field>
+    </div>
+    <div class="onerow">
+        <span class="workspaceHeader">&nbsp;</span>
+      </div>
+  <div class="onerow">
+    <span class="workspaceHeader">Bonus/commission...(Monthly)</span>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Over-Time" [(ngModel)]="placeHolderAmt" name="OvertimeAmt">
+    </mat-form-field>
+
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Bonus" [(ngModel)]="placeHolderAmt" name="BonusAmt">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Interest/Dividents" [(ngModel)]="placeHolderAmt" name="InterestDividentsAmt">
+    </mat-form-field>
+
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Commission" [(ngModel)]="placeHolderAmt" name="CommissionAmt">
+    </mat-form-field>
+  </div>
+</div>
+
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveEmploymentIncome('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveEmploymentIncome('next')">Next</button>
+</div>

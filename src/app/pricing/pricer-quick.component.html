@@ -1,0 +1,261 @@
+<form pricerQuickForm="ngForm">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Required data
+        </mat-panel-title>
+        <mat-panel-description>
+          Enter basic information
+        </mat-panel-description>
+        <mat-icon>account_circle</mat-icon>
+      </mat-expansion-panel-header>
+      <div class="panel-body row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" autocomplete="on" [(ngModel)]="pricingParams.FicoScore" (blur)=onBlurFicoScore(pricingParams.FicoScore)
+              name="FicoScore" type="number" matInput placeholder="Loan FICO" required>
+            <!--<mat-hint>Median credit score!</mat-hint>-->
+            <mat-error>
+              Credit Score is requied!
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" ngModel name="SubjectPropertyZipCode" [(ngModel)]="pricingParams.SubjectPropertyZipCode" name="SubjectPropertyZipCode"
+              type="number" matInput placeholder="Zip code" required>
+
+            <mat-error>
+              Zip Code is requied!
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="PropertyValueAmt" [(ngModel)]="pricingParams.PropertyValueAmt" type="text" matInput placeholder="Market Value"
+              required>
+
+            <mat-error>
+              Property Market value is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="LtvPct" [(ngModel)]="pricingParams.LtvPct" type="number" matInput placeholder="LTV Percent"
+              required>
+            <mat-error>
+              LTV is Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="Requestingloanamt" [(ngModel)]="pricingParams.Requestingloanamt" type="number" matInput
+              placeholder="Loan Amount" required>
+            <mat-error>
+              Loan Amount Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="FinType" [(ngModel)]="pricingParams.FinType" placeholder="Purpose of Finance" required>
+              <mat-option>--</mat-option>
+              <mat-option value="newmortgage">Purchase</mat-option>
+              <mat-option value="refinance">Refinance</mat-option>
+            </mat-select>
+            <mat-error>
+              Purchase or Refinance Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="OccType" [(ngModel)]="pricingParams.OccType" (blur)=onBlurOccupancyType() placeholder="Occupancy"
+              required>
+              <mat-option>--</mat-option>
+              <mat-option value="OwnerOccupied">Owner Occupied</mat-option>
+              <mat-option value="SecondHome">Second Home</mat-option>
+              <mat-option value="InvestmentProperty">Investment Property</mat-option>
+            </mat-select>
+            <mat-error>
+              Occupancy is Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="PropertyType" [(ngModel)]="pricingParams.PropertyType" placeholder="Property Type"
+              required>
+              <mat-option>--</mat-option>
+              <mat-option value="SingleFamilyAttached">Single Fam Attached</mat-option>
+              <mat-option value="SFR">Single Fam Detached</mat-option>
+              <mat-option value="TwoToFourUnits">2-4 Units</mat-option>
+              <mat-option value="ManufucturedHome">Manufactured Home</mat-option>
+              <mat-option value="PUD">Pud</mat-option>
+              <mat-option value="LowRiseCondo">Low Rise Condo</mat-option>
+              <mat-option value="HighRiseCondo">High Rise Condo</mat-option>
+            </mat-select>
+            <mat-error>
+              Property Type is Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="ImpountEscrowFlag" [(ngModel)]="pricingParams.ImpountEscrowFlag" placeholder="Impound Escrow?"
+              required>
+              <mat-option>--</mat-option>
+              <mat-option value="Yes">Yes</mat-option>
+              <mat-option value="No">No</mat-option>
+            </mat-select>
+            <mat-error>
+              Impound Escrow is Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="LockTermDays" [(ngModel)]="pricingParams.LockTermDays" placeholder="Lock Term Days"
+              required multiple>
+              <mat-option value="7" disabled="">7</mat-option>
+              <mat-option value="21">21</mat-option>
+              <mat-option value="30">30</mat-option>
+              <mat-option value="45">45</mat-option>
+              <mat-option value="60">60</mat-option>
+            </mat-select>
+            <mat-error>
+              Lock Terms is Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="RequestingRatePct" [(ngModel)]="pricingParams.RequestingRatePct" type="number" matInput
+              placeholder="Desired Rate (%)" required>
+            <mat-error>
+              Loan Amount Required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <br>
+    <mat-expansion-panel [expanded]="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Optional Data
+        </mat-panel-title>
+        <mat-panel-description>
+          Enter more details!
+        </mat-panel-description>
+        <mat-icon>face</mat-icon>
+      </mat-expansion-panel-header>
+      <div class="panel-body row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="AmortType" [(ngModel)]="pricingParams.AmortType" placeholder="ARM/Fixed" multiple>
+              <mat-option value="ARM">ARM</mat-option>
+              <mat-option value="Fixed">Fixed</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="AmortTermMonths" [(ngModel)]="pricingParams.AmortTermMonths" placeholder="Amort Term"
+              multiple>
+              <mat-option value="180">180</mat-option>
+              <mat-option value="240">240</mat-option>
+              <mat-option value="300">300</mat-option>
+              <mat-option value="360">360</mat-option>
+              <mat-option value="480">480</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="LoanType" [(ngModel)]="pricingParams.LoanType" placeholder="Loan Type" multiple>
+              <mat-option value="Conv">Conv</mat-option>
+              <mat-option value="FHA">FHA</mat-option>
+              <mat-option value="VA">VA</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="DocType" [(ngModel)]="pricingParams.DocType" placeholder="Documentation Type" multiple>
+              <mat-option value="Full">Full</mat-option>
+              <mat-option value="StreamlineAppraisal">Stearmline w/Appraisal</mat-option>
+              <mat-option value="StreamlineNoAppraisal">Stearmline w/o Appraisal</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="ResidencyStatusType" [(ngModel)]="pricingParams.ResidencyStatusType" placeholder="Residency Status">
+              <mat-option value="UsCitizen">US Citizen</mat-option>
+              <mat-option value="PermenentResidentAlien">Permenent Resident Alien</mat-option>
+              <mat-option value="NonPermenentResidentAlien">Non-Permenent Resident</mat-option>
+              <mat-option value="ForeignNational">Foreign National</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="MortgageInsuranceType" [(ngModel)]="pricingParams.MortgageInsuranceType" placeholder="Mortgage Insurance">              
+              <mat-option value="No">No</mat-option>
+              <mat-option value="Yes">Yes</mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="ExistingSecondLienAmt" [(ngModel)]="pricingParams.ExistingSecondLienAmt" type="number" matInput placeholder="Exisitng/New 2nd Lien ($)">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="CltvPct" [(ngModel)]="pricingParams.CltvPct" type="number" matInput placeholder="CLTV (%)">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 required-fields-cols">
+          <mat-form-field class="pricerquickfield-form">
+            <input class="form-control" name="DtiPct" [(ngModel)]="pricingParams.DtiPct" type="number" matInput placeholder="DTI (%)">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="FirstTimeHomeBuyerFlag" [(ngModel)]="pricingParams.FirstTimeHomeBuyerFlag" placeholder="First Time Home Buyer?">
+              <mat-option value="No">No</mat-option>
+              <mat-option value="Yes">Yes</mat-option>              
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
+          <mat-form-field class="pricerquickfield-form">
+            <mat-select class="form-control" name="AusRecommendation" [(ngModel)]="pricingParams.AusRecommendation" placeholder="AUS Recommendation?">
+              <mat-option value="None">Please Select</mat-option>              
+              <mat-option value="DuApproveEligible">DU Approve Eligible</mat-option>
+              <mat-option value="LpAcceptEligible">LP Accept Eligible</mat-option>                 
+            </mat-select>
+          </mat-form-field>
+        </div>
+    
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+  <div class="list-group-item">
+    <button mat-raised-button (click)="resetQuickPricerFields()">Reset</button>
+    <button mat-raised-button color="primary" (click)="runQuickPrice()">Quick Price</button>
+  </div>
+
+</form>

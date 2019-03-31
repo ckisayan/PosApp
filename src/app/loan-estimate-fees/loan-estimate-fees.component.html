@@ -1,0 +1,263 @@
+<form loanEstimateFeesForm="ngForm">
+    <table>
+        <tr>
+            <td>
+                <div id="actionButtonsForProductPricing">
+                    <mat-button-toggle-group #group="matButtonToggleGroup">
+                        <mat-button-toggle value="CashToClose" (click)="openCashToClose()">
+                            <mat-icon>money</mat-icon>
+                            <span>Cash to Close</span>
+                        </mat-button-toggle>
+
+                        <mat-button-toggle value="PreviewLE">
+                            <mat-icon>camera</mat-icon>
+                            <span>Preview LE</span>
+                        </mat-button-toggle>
+
+                        <mat-button-toggle value="SaveScenario">
+                            <mat-icon>save</mat-icon>
+                            <span>Save Scenario</span>
+                        </mat-button-toggle>
+                        <mat-button-toggle value="CreateLoan">
+                            <mat-icon>create</mat-icon>
+                            <span>Create Loan</span>
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <mat-accordion>
+        <mat-expansion-panel hideToggle="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    A. Origination Charges
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionATotal">$1,802</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <th>Fee Name</th>
+                    <th class="title">Borrower Paid</th>
+                    <th class="title">Seller Paid</th>
+                    <th class="title">Total</th>
+                </tr>
+                <tr>
+                    <td>0.25% of loan Amount (points)</td>
+                    <td class="title">
+                        $
+                        <input matInput type="number" class="amtField" disabled/>
+                    </td>
+                    <td class="title">
+                        $
+                        <input matInput type="number" class="amtField"  />
+                    </td>
+                    <td class="tdAmount">
+                        $
+                        <input matInput type="number" class="amtField" value="405" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td class="title">
+                        $
+                        <input matInput type="number" class="amtField" disabled value="0.0" />
+                    </td>
+                    <td class="title">
+                        $
+                        <input matInput type="number" class="amtField" />
+                    </td>
+                    <td class="tdAmount">
+                        $
+                        <input matInput type="number" class="amtField" value="300" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                    </td>
+                    <td>
+                        <div>
+                            <mat-form-field>
+                                <mat-select>
+                                    <mat-option>Select One</mat-option>
+                                    <mat-option *ngFor="let origfee of OriginationFeeList" [value]="origfee">{{origfee}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>            
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    B. Services You Cannot Shop For
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionBTotal">$672</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <td>Appraisal Fees</td>
+                    <td class="tdAmount">$405</td>
+                </tr>
+                <tr>
+                    <td>Credit Report Fees</td>
+                    <td class="tdAmount">$30</td>
+                </tr>
+            </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    C. Services You Can Shop For
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionCTotal">$3,198</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <td>Pest Inspection Fee</td>
+                    <td class="tdAmount">$135</td>
+                </tr>
+                <tr>
+                    <td>Survey Fee</td>
+                    <td class="tdAmount">$65</td>
+                </tr>
+            </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    D. TOTAL LOAN COSTS (A + B + C)
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionCTotal">$5,672</span>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    E. Taxes and Other Government Fees
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionETotal">$85</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <td>PRecording Fees and Other Taxes</td>
+                    <td class="tdAmount">$85</td>
+                </tr>
+                <tr>
+                    <td>Transfer Taxes</td>
+                    <td class="tdAmount">$0</td>
+                </tr>
+            </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    F. Prepaids
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionFTotal">$867</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <td>Homeowner’s Insurance Premium ( 6 months)</td>
+                    <td class="tdAmount">$605</td>
+                </tr>
+                <tr>
+                    <td>Prepaid Interest ( $17.44 per day for 15 days @ 3.875%)</td>
+                    <td class="tdAmount">$262</td>
+                </tr>
+            </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    G. Initial Escrow Payment at Closing
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionFTotal">$413</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <td>Homeowner’s Insurance $100.83 per month for 23mo.</td>
+                    <td class="tdAmount">$202</td>
+                </tr>
+                <tr>
+                    <td>Property Taxes $105.30 per month for 2 mo.</td>
+                    <td class="tdAmount">$211</td>
+                </tr>
+            </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    H. Other
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionHTotal">$1,017</span>
+            </mat-expansion-panel-header>
+            <table class="table">
+                <tr>
+                    <td>Title – Owner’s Title Policy (optional)</td>
+                    <td class="tdAmount">$1,017</td>
+                </tr>
+
+            </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    I. TOTAL OTHER COSTS(E + F + G + H)
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionCTotal">$2,382</span>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="totalAmt">
+                    J. TOTAL CLOSING COSTS (D + I)
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+                <mat-icon></mat-icon>
+                <span class="totalAmt" id="loanEstimateSectionCTotal">$8,054</span>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel>
+    </mat-accordion>
+</form>

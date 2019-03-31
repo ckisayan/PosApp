@@ -1,0 +1,32 @@
+<div class="workspace">
+  <div>
+    <span class="workspaceHeader">Assignment</span>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="LoanBranchId" [(ngModel)]="loanAssignment.LoanBranchId" placeholder="Branch Name"
+        required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Purchase">Glendale Branch</mat-option>
+        <mat-option value="RefinanceRateTerm">Irvine Branch</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="LoanMloId" [(ngModel)]="loanAssignment.LoanMloId" placeholder="MLO Name"
+        required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Full">John Smith</mat-option>
+        <mat-option value="StearmlineWithAppraisal">Mary MLO</mat-option>
+        
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+</div>
+
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveAssignmentInfo('previous')">Save</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveAssignmentInfo('next')">Next</button>
+</div>

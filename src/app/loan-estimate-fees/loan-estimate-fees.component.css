@@ -1,0 +1,23 @@
+
+.table{
+    border-collapse: separate;
+    border-radius: 2px; 
+    border: 0px solid rgb(235, 223, 223); 
+    
+    
+}
+.tdAmount{
+    text-align:right;
+}
+.title{
+    text-align:center;
+}
+.totalAmt{
+      font-weight: bold; 
+  }
+
+  .amtField{
+      width: 100px;
+      text-align:right;
+      border: 1px solid rgb(138, 131, 131); 
+  }

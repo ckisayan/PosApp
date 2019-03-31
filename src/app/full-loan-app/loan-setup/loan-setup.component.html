@@ -1,0 +1,59 @@
+<form borrowerInfo="ngForm" class="form-horizontal">
+  <mat-card class="borPanel">
+    <mat-card-title>
+      <button mat-raised-button class="fullLoanApp-primary-button" (click)="loanSetupSideNav.open()">Show Task</button>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-sidenav-container class="side-nav-container">
+        <mat-sidenav #loanSetupSideNav class="sidenav" mode="side" visibility="visible" name="loanSetupSideNav">
+          <!--<section class="side-menu-section-common section-side-closer" (click)="borsidenav.close()">X</section>-->
+          <section class="side-menu-section-common side-menu-section-header"></section>
+          <section class="side-menu-section-common sectionClicked" (click)="navigateToSection('loanAssigment')" #loanAssigment>Loan Assignment</section>          
+          <section class="side-menu-section-common sectionClicked" (click)="navigateToSection('borBasicInfo')" #borBasicInfo>Borrower Basic Info</section>
+          <section class="side-menu-section-common sectionNotClicked" (click)="navigateToSection('primaryBorDetails')" #primaryBorDetails>Borrower Details</section>
+          <section class="side-menu-section-common sectionClicked" (click)="navigateToSection('primaryBorAddr')" #primaryBorAddr>Borrower Address</section>          
+          <section class="side-menu-section-common sectionNotClicked" (click)="navigateToSection('orderViewCredit')" #orderViewCredit>Order/View Credit</section>
+          
+
+        </mat-sidenav>
+        <div class="div-main">
+          <div *ngIf="loanAssigmentVisible">
+            <app-loan-assignment (childMenuEvent)="navigateNext($event)"></app-loan-assignment>
+          </div>
+          <div *ngIf="borBasicInfoVisible">
+            <app-bor-basic-info (childMenuEvent)="navigateNext($event)"></app-bor-basic-info>
+          </div>
+          <div *ngIf="primaryBorDetailsVisible">
+            <bor-details (childMenuEvent)="navigateNext($event)"></bor-details>
+          </div>
+          <div *ngIf="primaryBorAddrVisible" id="addressDivSection">
+            <bor-address (childMenuEvent)="navigateNext($event)"></bor-address>
+          </div>
+          <div *ngIf="primaryBorMailingAddrVisible" id="">
+            <bor-mailing-addr (childMenuEvent)="navigateNext($event)"></bor-mailing-addr>
+          </div>
+          <div *ngIf="primaryBorHousingInfoVisible" id="">
+            <bor-housing-status (childMenuEvent)="navigateNext($event)"></bor-housing-status>
+          </div>
+
+          <div *ngIf="spouseBasicInfoVisible" id="">
+            <spouse-basic-info (childMenuEvent)="navigateNext($event)"></spouse-basic-info>
+          </div>
+          <div *ngIf="spouseAddressVisible" id="">
+            <spouse-address (childMenuEvent)="navigateNext($event)"></spouse-address>
+          </div>
+          <div *ngIf="spouseMailingAddressVisible" id="">
+            <app-spouse-mailing-addr (childMenuEvent)="navigateNext($event)"></app-spouse-mailing-addr>
+          </div>
+          <div *ngIf="orderViewCreditVisible" id="">
+            <app-order-view-credit (childMenuEvent)="navigateNext($event)"></app-order-view-credit>
+          </div>
+          <div *ngIf="creditPublicRecordsVisible" id="">
+            <app-credit-public-records (childMenuEvent)="navigateNext($event)"></app-credit-public-records>
+          </div>
+
+        </div>
+      </mat-sidenav-container>
+    </mat-card-content>
+  </mat-card>
+</form>

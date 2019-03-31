@@ -1,0 +1,45 @@
+<form class="SaveScenarioForm">
+  <mat-form-field class="full-width">
+    <input class="form-control" autocomplete="on" [(ngModel)]="borFirstName" name="firstNameFormControl" type="string" matInput placeholder="First Name"
+      required>
+
+    <mat-error>
+      Please enter a First Name for borrower
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input class="form-control" autocomplete="on" [(ngModel)]="borLastName" name="lastNameFormControl" type="string" matInput placeholder="Last Name"
+      required>
+    <mat-error>
+      Please enter a Last Name for borrower
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input class="form-control" autocomplete="on" [(ngModel)]="rateShortDesc" name="rateShortDescControl" type="string" matInput placeholder="Scenario Short Desc"
+      required>
+    <mat-error>
+      Please enter a Scenario short description
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input class="form-control" autocomplete="on" [(ngModel)]="rateLongDesc" name="rateLongDescControl" type="string" matInput placeholder="Scenario Long Desc"
+      required>
+    <mat-error>
+      Please enter a Scenario short description
+    </mat-error>
+  </mat-form-field>
+</form>
+<div class="mat-dialog-actions" mat-dialog-actions="" style="float:right;">
+  <div>
+    <button cdkfocusinitial="true" mat-button="" type="button" class="mat-button" aria-label="Close dialog" (click)="saveScenarioDialog()">
+      <span class="mat-button-wrapper">Save</span>
+      <div class="mat-button-ripple mat-ripple" matripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
+    <button cdkfocusinitial="" mat-button="" type="button" class="mat-button" aria-label="Close dialog" (click)="cancelScenarioDialog()">
+      <span class="mat-button-wrapper">Cancel</span>
+      <div class="mat-button-ripple mat-ripple" matripple=""></div>
+      <div class="mat-button-focus-overlay"></div>
+    </button>
+    
+</div>

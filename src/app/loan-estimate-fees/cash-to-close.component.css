@@ -1,0 +1,26 @@
+.cashToClose-table{
+    margin-bottom: 20px;   
+}
+
+.table{
+    border-collapse: separate;
+    border-radius: 2px; 
+    border: 1px solid black; 
+    
+}
+.tdAmount{
+    text-align:right;
+}
+.activeButton{
+    align-self:flex-end;
+    float: right;
+    
+
+}
+.spacer {flex: 1 1 auto;}
+
+.TableTitle{
+    background-color:lightskyblue;
+    
+    
+}

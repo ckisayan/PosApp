@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="enable-background:new 0 0 612 792;" xml:space="preserve" width="612" height="792"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+
+<g class="currentLayer"><title>Layer 1</title><g id="svg_1" class="selected" fill="#ffffff" fill-opacity="1">
+	<defs>
+		<rect id="SVGID_1_" y="122.24099731445312" width="612" height="546.0919799804688" fill="#ffffff" fill-opacity="1"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" style="overflow:visible;" id="svg_2"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_2_);" id="svg_3" fill="#ffffff" fill-opacity="1">
+		<defs>
+			<rect id="SVGID_3_" y="123" width="612" height="546" fill="#ffffff" fill-opacity="1"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_" style="overflow:visible;" id="svg_4"/>
+		</clipPath>
+		<path style="clip-path:url(#SVGID_4_);" d="M311.364,173.73l227.642,230.487h-30.587c-11.738,0-21.343,9.605-21.343,21.345    v199.187h-96.037V478.916c0-11.739-9.605-21.345-21.343-21.345h-131.6c-11.739,0-21.345,9.605-21.345,21.345v145.833H113.598    V425.562c0-11.739-9.605-21.345-21.338-21.345h-18.5L311.364,173.73z M21.117,446.899h49.798v199.189    c0,11.738,9.605,21.345,21.345,21.345h145.835c11.732,0,21.337-9.607,21.337-21.345V500.253h88.925v145.835    c0,11.738,9.599,21.345,21.338,21.345h138.723c11.739,0,21.338-9.607,21.338-21.345V446.899h60.47    c8.538,0,16.361-5.332,19.56-13.159c3.206-7.823,1.422-17.072-4.621-23.116L327.014,128.554    c-8.184-8.177-21.695-8.532-29.877-0.348L6.534,410.268c-6.399,6.043-8.184,15.294-4.978,23.471    C4.756,441.921,12.579,446.899,21.117,446.899z" id="svg_5" fill="#ffffff" fill-opacity="1"/>
+	</g>
+</g></g></svg>

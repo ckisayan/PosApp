@@ -1,0 +1,290 @@
+@import url("..//../app-style.css");
+
+
+.asset_mainDiv{        
+    width: 100%;      
+    margin-bottom: 20px;  
+}
+.asset-hedMainDiv{        
+    width: 100%; 
+}
+
+
+.asset-paddingRight{
+    float: right;
+    text-align: right;
+}
+.asset-heading-span{
+    font-family: "Lato-Semibold";
+    font-size: 20px;                
+    color: #193a60;
+}
+.asset-sub-heading-span{
+    font-family: "Lato-Semibold";
+    font-size: 14px;                
+    font-weight: bold;
+    color: #193a60;
+
+}        
+.asset-tableDiv{
+    margin-top:10px;        
+    width:  100%;        
+}
+.asset-tabelMain{
+    width:100%;
+    border-collapse:collapse;   
+}
+
+.asset-Div_width100pec{
+    width: 100%
+}
+.table_row{        
+    border-bottom: 1px solid #b9c5db;
+}
+.table_LastRow{
+    padding-top: 16px;
+   padding-bottom: 16px;
+}
+
+.table_Col_txt2_Width{
+    width:15%
+}
+.table_Col_txt3_Width{
+    width:25%
+}
+.table_colTxtRightAlign{
+    text-align: right;
+}
+.table_colTxtCenterAlign{
+    text-align: center;
+}
+.table_colTxtPaddingRight{
+    padding-right: 10px;
+}   
+.table_colTxtPaddingLeft{
+    padding-left: 10px;
+}
+.table_editSpan{
+    cursor: pointer;
+    user-select: none;
+     transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transition: .2s ease-out all;
+}
+.roate_span{
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transition: .2s ease-out all;
+}
+.table_deleteSpan{
+    cursor: pointer;
+}
+.sub_brower{
+    border-radius: 50px;
+    font-size: 10px;
+    font-family: "Lato-Semibold";
+    padding: 2px;
+    background: #73c7e0;
+}
+.sub_cobrower{
+        border-radius: 50px;
+    font-size: 10px;
+    font-family: "Lato-Semibold";
+    padding: 2px;
+    background: #daaa87;
+}
+.Add_Row_contDiv{
+   padding-top: 15px;
+   padding-bottom: 15px;
+   position: relative;
+   display: block;
+   width: 100%;
+}
+.Add_detail_span{        
+    font-family: "Lato-regular";
+    color: #0091ff;
+    font-size: 14px;
+    text-decoration: underline;
+    float: right;
+    cursor: pointer;
+    font-weight: 700
+}
+
+.Add_AssetIcon_MainContDiv{
+    display: block;
+    margin: auto;
+    width: 97%;  
+}
+.Add_AssetHedSpan{
+    position: relative;
+    display: block;
+    padding-bottom: 16px;
+    font-size: 18px;
+    font-family: "Lato-Regular";
+    color: #00a3fb;
+    text-align: center;
+}
+.Add_AsstIconConvDiv{
+    display: inline-block;
+    position: relative;    
+    cursor: pointer;
+    border: 1px solid #b9c6DC;
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-right: 13px;
+    margin-bottom: 10px;
+}
+.add_clickForRow{
+    cursor: pointer;
+}
+.Add_AssIconSpan{
+    position: relative;
+    display: block;
+    font-size: 23px;
+    color: #193a60;
+    padding-bottom: 8px;
+    padding-top: 18px;
+}
+.Add_AssIconTxtSpan{
+    position: relative;
+    display: inline-flex;
+    font-size: 13px;
+    font-family: "Lato-Semibold";
+    color: #193a60;
+}
+
+
+
+.table_totCell_td{
+    padding-top:10px;       
+}
+.section_division{
+    position: relative;
+    width:100%;
+    height: 50px;
+}
+.Add_AssetUserMainDiv{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.selected_userBorder{
+    border: 2px solid #193a60;
+}
+.voa_msgSpan{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Lato-Regular";
+    font-size: 20px;    
+    color: #193a60;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.Ass_contBtnDiv{
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.Ass_ContBtnHolderDiv{
+    width: 220px;
+    float: right;
+}
+
+   
+.asset-add-option_div1 {
+display: inline-block;
+padding-right: 30px;
+}
+.asset-add-option_div2 {
+display: inline-block;
+}
+.asset-manualadd-button {
+background-color: gray;
+border-color: green;
+}
+.asset-voaorder-button {
+background-color: green;
+border-color: green;
+}
+
+.assetHeadSpan {
+    padding: 10px;
+display: block;
+font-family: "Lato-Semibold";
+font-size: 20px;
+color: #193a60;
+}
+.addAssetGroup{
+width: 90%;
+margin: auto;
+height: 100%;
+text-align: center;
+}
+
+.voa_pullmessage {
+font-size: 14px !important;
+text-align: center;
+}
+
+.templ_closeBtnDiv{
+position: relative;
+display: block;
+width: 100%;
+text-align: center;
+}
+
+.table_colrightAlign{
+text-align: right !important;
+padding-right: 30px !important;
+}
+
+.table_colLeftAlign{
+padding-left: 10% !important;
+}
+
+.workspaceAssets{
+    height:775px;
+    border:1px solid tan;
+   
+}
+.full1003-primary-button {
+    padding-top: 7px;
+    padding-right: 16px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+    font-size: 16px;
+    font-family: Lato-Semibold, sans-serif;
+    font-weight: normal;
+    height: 40px;
+    width: 223px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    background: #0091ff;
+    color: #ffffff;
+}
+
+.full1003-secondary-button {
+    padding-top: 7px;
+    padding-right: 16px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+    height: 40px;
+    width: 223px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: Lato-Semibold, sans-serif;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 2px solid #193a60;
+    background: #ffffff;
+    color: #193a60;
+}

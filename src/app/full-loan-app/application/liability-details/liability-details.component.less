@@ -1,0 +1,633 @@
+@bdradius: 4px;
+@fontSize: 17px;
+@marginTop: 30px;
+@baseColor: #193a60;
+
+.broad(@girth) {
+    width: @girth;
+}
+.assetIsLoader {
+    label {
+        font-weight: 500;
+        width: 36%;
+        @media @smartphones {
+            width: 100%;
+        }
+    }
+    
+    .cashDepositPurchase, 
+    .full1003-input-block .full1003-input-div input:focus + .cashDepositPurchase {
+        position: absolute;
+        pointer-events: none;
+        left: 10px;
+        font-family: Lato-Regular, sans-serif;
+        -webkit-transition: 0.4s ease all;
+        -moz-transition: 0.4s ease all;
+        -ms-transition: 0.4s ease all;
+        -o-transition: 0.4s ease all;
+        transition: 0.4s ease all;
+        font-size: 12px;
+        top: 1px;
+        color: #757575;
+    }
+
+    .cashDepositPurchase[data-value=""] {
+        top: 25px;
+        font-size: 16px;
+    }
+
+    .asset-heading {
+        .padding(0,0,0,28px);
+        font-family: Lato-Regular, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #193a60;
+        @media @smartphones {
+            .padding(0,0,15px,0);
+        }
+    }
+    .list-coborrower {
+      
+    }
+    .asset-details-div{
+         .padding(0,0,0,40px);
+    }
+    .margintop30 {
+        margin-top: @marginTop;
+    }
+    .padding16 {
+        .padding(26px,0,0,0);
+        margin-bottom: 16px; 
+    }
+    .sub-heading {
+        font-size: @fontSize;
+        color: @baseColor;
+        cursor: pointer;
+        font-family: Lato-semibold;
+    }
+
+    .refinancePadding{ 
+        margin-bottom: 10px; 
+    }
+
+    .alignRight {
+        text-align: right;
+        @media @smartphones {
+            text-align: center;
+        }
+    }
+
+    .shiftToRight {
+        text-align: right;
+    }
+
+    .tableMobileView {
+        .padding(0,10px,0,10px);
+    }
+
+    .pencil-icon {
+        margin-right: 35px;
+        top: 5px;
+        color: #193a60;
+        font-size: 16px;
+    }
+
+    .tableMobileHeading, .tableMobileContent {
+        font-size: 12px;
+        font-family: Lato-regular;
+        color: #193a60;
+    }
+
+    .tableMobileContent {
+        font-size: 14px;
+    }
+    .margin0 {
+        margin: 0;
+    }
+
+    .mobileshiftTableRow {
+        padding-bottom: 16px;
+    }
+
+    .cancelBtn {
+        margin-bottom: 10px;
+    }
+
+    .select-box {
+        .broad(100%);
+    }
+    .address-column {
+        a {
+            color: #193a60;
+            cursor: pointer;
+            font-family: Lato-Regular;
+            font-size: 18px;
+        }
+    }
+    .addAsset-link {
+            margin-left: 50px;
+    width: 142px;
+    padding: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #007aff;
+    }
+    .asset-table {
+        margin-top: 15px;
+        tbody > tr > td {
+            &.paidTo{
+
+            }
+            &.type{
+
+            }
+            &.payments{
+
+            } 
+            &.remaining{
+
+            } 
+            &.accountbal{
+                
+            }
+            border-bottom: 1px solid #b9c6dc;
+            font-family: Lato-Regular;
+            font-size: 18px;
+            color: #193a60;
+            vertical-align: middle;
+    max-width: 180px;
+    word-wrap: break-word;
+        }
+        .userActionIcon {
+            border-top: 1px solid #b9c6dc;
+            text-align: right;
+            .glyphicon {
+                top: 5px;
+                margin-right: 15px;
+            } 
+        }
+        .OthAutoAssetIco {
+            border-top: 1px solid #b9c6dc;
+            text-align: right;
+            .glyphicon {
+                top: 5px;
+                margin-right: 35px;
+            }
+        }
+        thead > tr > th {
+            border-top: 0;
+            border-bottom: 1px solid #b9c6dc;
+            font-family: Lato-semibold;
+            font-size: 18px;
+            color: #193a60;
+            @media @desktop, @tablet {
+                font-size: 14px;
+            }
+        }
+        >tbody + tbody {
+            border-top: none;
+        }
+        .shiftTableContent {
+            width: 30%;
+        }
+        .shiftToAlign {
+            width: 3.5%;
+        }
+    }
+
+    .stockBondTable {
+        position: relative;
+        margin-bottom: 0;
+        border-bottom: 1px solid #b9c6dc;
+        &:first-of-type {
+            border-top: 1px solid #b9c6dc !important;
+            margin-top: 31px;
+        }
+        >tbody:last-of-type > tr > td {
+            padding-bottom: 38px;
+        }
+        >thead>tr>th {
+            border-bottom: 0 !important;
+            border-top: 0 !important;
+            padding-top: 26px;
+            font-family: Lato-Regular;
+            font-size: 12px;
+            color: #757575;
+        }
+        >tbody>tr>td {
+            border-top: 0 !important;
+            font-size: 18px;
+            font-family: Lato-regular;
+            color: #193a60;
+        }
+        .editDelseparator {
+            border-bottom: 1px solid #b9c6dc;
+            position: absolute;
+            width: 13.5em;
+            transform: rotate(90deg);
+            right: -2%;
+            top: 38%;
+            @media @x-large-desktop {
+                right: 2%;
+            }
+        }
+    }
+
+    .bottom20 {
+        margin-bottom: 20px;
+    }
+
+    .top20 {
+        margin-top: 20px;
+    }
+
+    .paddingLeft55 {
+        padding-left: 55px;
+        @media @smartphones {
+            padding-left: 26px;
+        }
+    }
+
+    .close-icon {
+        cursor: pointer;
+        color: #193a60;
+    }
+
+    .blueline {
+        width: 68%;
+        border-top: 1px solid #193a60;
+        @media @smartphones {
+            width: 100%;
+        }
+    }
+
+
+/* new css */
+    .asset_mainDiv{        
+        width: 100%;      
+        margin-bottom: 20px;  
+    }
+    .asset-hedMainDiv{        
+        width: 100%; 
+    }
+    .asset-paddingLeft{
+       /* padding-left: 20px;*/
+       /* display: inline-block;*/
+    }
+
+    .paddingLeftcustom {
+        padding-left: 20px;
+        @media @mobile,@large-mobile {
+            padding-left: 0px;
+        }
+
+    }
+    .asset-paddingRight{
+        float: right;
+        text-align: right;
+    }
+    .asset-heading-span{
+        font-family: "Lato-Semibold";
+        font-size: 20px;                
+        color: #193a60;
+    }
+    .asset-sub-heading-span{
+        font-family: "Lato-Semibold";
+        font-size: 14px;                
+        font-weight: bold;
+        color: #193a60;
+
+    }        
+    .asset-tableDiv{
+        margin-top:10px;        
+        width:  100%;        
+    }
+    .asset-tabelMain{
+        width:100%;
+        border-collapse:collapse;   
+    }
+    .asset_tableDisplayNone{
+        @media @mobile,@large-mobile,@small-tablet,@tablet{        
+             th:nth-child(4), th:nth-child(5),
+            td:nth-child(4), td:nth-child(5) {
+                display: none
+            } 
+        }   
+    }
+    .liability_tableDisplayNone{
+        @media @mobile,@large-mobile,@small-tablet,@tablet{        
+             th:nth-child(4),td:nth-child(4) {
+                display: none
+            } 
+             th:nth-child(3),td:nth-child(3) {
+                display: none
+            } 
+        }   
+    }
+    .reo_tableDisplayNone{
+         @media @mobile,@large-mobile,@small-tablet,@tablet{        
+             th:nth-child(3),
+            td:nth-child(3) {
+                display: none
+            } 
+        } 
+    }
+    .asset-Div_width100pec{
+        width: 100%
+    }
+    .table_row{        
+        border-bottom: 1px solid #b9c5db;
+    }
+    .table_LastRow{
+        padding-top: 16px;
+       padding-bottom: 16px;
+    }
+    .table_hedingTxt{
+        font-family: "Lato-Semibold";
+        font-size: 18px;
+        color: #193a60;
+        padding-bottom: 16px;
+        @media @mobile,@large-mobile,@small-tablet,@tablet{
+            font-size: 15px;
+        }
+    }
+    .table_imgColWidth{
+        width:4%;
+        .table_colTxtCenterAlign;
+         @media @mobile,@large-mobile,@small-tablet,@tablet{        
+             width:8%;
+        }
+    }
+    .table_Col_txt1_Width{
+        width:15%;
+        @media @mobile,@large-mobile,@small-tablet,@tablet{        
+             width:30%;
+        }  
+    }
+    .table_Col_txt2_Width{
+        width:15%
+    }
+    .table_Col_txt3_Width{
+        width:25%
+    }
+    .table_Col_txt4_Width{
+        width:25%;
+         @media @mobile,@large-mobile,@small-tablet,@tablet{        
+             width:30%;
+        } 
+    }
+    .table_colTxtRightAlign{
+        text-align: right;
+    }
+    .table_colTxtCenterAlign{
+        text-align: center;
+    }
+    .table_colTxtPaddingRight{
+        padding-right: 10px;
+    }   
+    .table_colTxtPaddingLeft{
+        padding-left: 10px;
+    }
+    .table_editSpan{
+        cursor: pointer;
+        user-select: none;
+         transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transition: .2s ease-out all;
+    }
+    .roate_span{
+        transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transition: .2s ease-out all;
+    }
+    .table_deleteSpan{
+        cursor: pointer;
+    }
+    .table_bodyTxt{
+       font-family: "Lato-Regular";
+       font-size: 18px; 
+       color: #193a60;       
+       padding-top: 16px;
+       padding-bottom: 16px;
+         @media @mobile,@large-mobile,@small-tablet,@tablet{
+            font-size: 15px;
+        }
+    }
+    .sub_brower{
+        border-radius: 50px;
+        font-size: 10px;
+        font-family: "Lato-Semibold";
+        padding: 2px;
+        background: #73c7e0;
+    }
+    .sub_cobrower{
+            border-radius: 50px;
+        font-size: 10px;
+        font-family: "Lato-Semibold";
+        padding: 2px;
+        background: #daaa87;
+    }
+    .Add_Row_contDiv{
+       padding-top: 15px;
+       padding-bottom: 15px;
+       position: relative;
+       display: block;
+       width: 100%;
+    }
+    .Add_detail_span{        
+        font-family: "Lato-regular";
+        color: #0091ff;
+        font-size: 14px;
+        text-decoration: underline;
+        float: right;
+        cursor: pointer;
+        font-weight: 700
+    }
+    .liability-dynamic-text::before{
+        content: attr(desktop-txt) "";
+        @media @mobile{
+            content: attr(mobile-txt) "";
+        } 
+    }
+
+    .Add_AssetIcon_MainContDiv{
+        display: block;
+        margin: auto;
+        width: 97%;  
+    }
+    .Add_AssetHedSpan{
+        position: relative;
+        display: block;
+        padding-bottom: 16px;
+        font-size: 18px;
+        font-family: "Lato-Regular";
+        color: #00a3fb;
+        text-align: center;
+    }
+    .Add_AsstIconConvDiv{
+        display: inline-block;
+        position: relative;    
+        cursor: pointer;
+        border: 1px solid #b9c6DC;
+        border-radius: 4px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        margin-right: 13px;
+        margin-bottom: 10px;
+    }
+    .add_clickForRow{
+        cursor: pointer;
+    }
+    .Add_AssIconSpan{
+        position: relative;
+        display: block;
+        font-size: 23px;
+        color: #193a60;
+        padding-bottom: 8px;
+        padding-top: 18px;
+    }
+    .Add_AssIconTxtSpan{
+        position: relative;
+        display: inline-flex;
+        font-size: 13px;
+        font-family: "Lato-Semibold";
+        color: #193a60;
+    }
+
+    .table_totHedTxt{
+        font-family: "Lato-Semibold";
+        font-size: 14px;
+        color: #000000;
+        position: relative;
+        display: block;
+        text-align: left;     
+         @media @mobile,@large-mobile,@small-tablet,@tablet{
+            font-size: 12px;
+        }   
+    }
+
+    .table_totAmtTxt{
+        font-family: "Lato-Regular";
+        font-size: 26px;    
+        color: #193a60;
+        position: relative;
+        display: block;   
+        text-align: left;  
+        @media @mobile,@large-mobile,@small-tablet,@tablet{
+            font-size: 19px;
+        }    
+    }
+
+    .table_totCell_td{
+        padding-top:10px;       
+    }
+    .section_division{
+        position: relative;
+        width:100%;
+        height: 50px;
+    }
+    .NoAssetContDiv{
+        width:100%;
+        position: relative;
+        padding-top:30px;
+        padding-bottom:30px;
+        @media @mobile,@large-mobile,@small-tablet,@tablet{
+            padding-top:10px;
+            padding-bottom:10px;
+        } 
+    }
+    .NoField_span{
+        font-family: "Lato-Regular";
+        font-size: 20px;    
+        color: #193a60;
+        position: relative;
+        display:block;
+        text-align: center;
+        @media @mobile,@large-mobile,@small-tablet,@tablet{
+            font-size: 16px;  
+        } 
+    }
+    .Add_AssetUserMainDiv{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .selected_userBorder{
+        border: 2px solid #193a60;
+    }
+    .voa_msgSpan{
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-family: "Lato-Regular";
+        font-size: 20px;    
+        color: #193a60;
+        margin-bottom: 20px;
+        padding-left: 10px;
+    }
+    .Ass_contBtnDiv{
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+    .Ass_ContBtnHolderDiv{
+        width: 220px;
+        float: right;
+    }
+}
+
+       
+.asset-add-option_div1 {
+    display: inline-block;
+    padding-right: 30px;
+}
+.asset-add-option_div2 {
+    display: inline-block;
+}
+.asset-manualadd-button {
+    background-color: gray;
+    border-color: green;
+}
+.asset-voaorder-button {
+    background-color: green;
+    border-color: green;
+}
+
+.assetHeadSpan {
+        padding: 10px;
+    display: block;
+    font-family: "Lato-Semibold";
+    font-size: 20px;
+    color: #193a60;
+}
+.addAssetGroup{
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+}
+    
+.voa_pullmessage {
+    font-size: 14px !important;
+    text-align: center;
+}
+
+.templ_closeBtnDiv{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.table_colrightAlign{
+    text-align: right !important;
+    padding-right: 30px !important;
+}
+
+.table_colLeftAlign{
+    padding-left: 10% !important;
+}

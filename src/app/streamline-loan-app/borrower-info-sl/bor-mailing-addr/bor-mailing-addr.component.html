@@ -1,0 +1,51 @@
+<div id="mailingAddressDivSection" class="workspace">
+  <div>
+    <span class="workspaceHeader">Primary Borrower Mailing Address</span>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Address 1" required [(ngModel)]="borrowerInfo.BorMailingAddress1"
+        name="borMailingAddress1">
+      <mat-error>
+        Address is requied!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Address 2" [(ngModel)]="borrowerInfo.BorMailingAddress2" name="borMailingAddress2">
+      <mat-error>
+        Address is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Enter Zip code" required [(ngModel)]="borrowerInfo.BorMailingAddrZipCode"
+        name="borMailingAddZipCode">
+      <mat-error>
+        Zip is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="City" required [(ngModel)]="borrowerInfo.BorMailingAddrCity"
+        name="borMailingAddrCity">
+      <mat-error>
+        City is requied!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="State" required [(ngModel)]="borrowerInfo.BorMailingAddrState"
+        name="borMailingAddrState">
+      <mat-error>
+        State is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+</div>
+<div>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveCustomerMailingAddress('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveCustomerMailingAddress('next')">Next</button>
+</div>

@@ -1,0 +1,48 @@
+<div class="workspace">
+  <div>
+    Do you own your current property address (click one)?
+  </div>
+  <div>
+    <mat-button-toggle-group #group="matButtonToggleGroup" [ngModel]="borrowerInfo.BorRentOwn" name="borRentOwn" class="mat-button-toggle mat-button-toggle-checked">
+      <mat-button-toggle value="AddrOwn" (click)="setAddrRentOwn('AddrOwn')">
+        <mat-icon *ngIf="borrowerInfo.BorRentOwn=='AddrOwn'">checked</mat-icon>
+        <span>Own</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="AddrRent" (click)="setAddrRentOwn('AddrRent')">
+        <mat-icon *ngIf="borrowerInfo.BorRentOwn=='AddrRent'">checked</mat-icon>
+        <span>Rent</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="AddrRentFree" (click)="setAddrRentOwn('AddrRentFree')">
+        <mat-icon *ngIf="borrowerInfo.BorRentOwn=='AddrRentFree'">checked</mat-icon>
+        <span>Rent Free</span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div id="BorHousingStatus">
+    <div id="RentSection" *ngIf="borrowerInfo.BorRentOwn=='AddrRent'">
+      <div>
+        <mat-form-field class="matformfield">
+          <input class="form-control" type="text" matInput placeholder="Rent Amount" required [(ngModel)]="borrowerInfo.BorCurrentHousingRent"
+            name="BorCurrentHousingRent">
+          <mat-error>
+            Rent is requied!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="matformfield">
+          <input class="form-control" type="text" matInput placeholder="Landlord Name" [(ngModel)]="borrowerInfo.BorLandlortName" name="BorLandlortName">
+        </mat-form-field>
+        <mat-form-field class="matformfield">
+          <input class="form-control" type="text" matInput placeholder="Landlord Phone Number" [(ngModel)]="borrowerInfo.BorLandlortPhoneNumber"
+            name="BorLandlortPhoneNumber">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveBorHousingStatus('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveBorHousingStatus('next')">Next</button>
+</div>

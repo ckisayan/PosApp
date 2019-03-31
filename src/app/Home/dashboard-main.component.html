@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-content>
+        <h2 class="example-h2"></h2>
+        <mat-tab-group class="demo-tab-group">
+            <mat-tab label="Actions">
+                <ng-template mat-tab-label>
+                    <mat-icon>alarm</mat-icon>
+                    <span>Actions</span>
+                </ng-template>
+                <div class="ActionTab">
+                    Something needs to be done
+                </div>
+            </mat-tab>
+            <mat-tab label="Status">
+                <ng-template mat-tab-label>
+                    <mat-icon>assignment</mat-icon>
+                    
+                    <span (click)="test()">
+                        Status
+                    </span>
+                </ng-template>
+                <div class="scenarios">
+                    status
+                    <pricingDetail></pricingDetail>
+                </div>
+            </mat-tab>
+            <mat-tab label="Scenario">
+                <!--disabled-->
+                <ng-template mat-tab-label>
+                    <mat-icon>build</mat-icon>
+                    <span>Scenario</span>
+                </ng-template>
+                <div class="scenarios">                    
+                    <scenario-pipeline></scenario-pipeline>
+                </div>
+                
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card-content>
+</mat-card>
+
+<!--
+<div class="searchbox-container">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Search by Borrower, Subject Prop..." value="">
+    </mat-form-field>
+</div>
+-->

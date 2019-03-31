@@ -1,0 +1,52 @@
+<div class="workspace">
+  <span class="workspaceHeader">Primary Borrower Information</span>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="First Name" required [(ngModel)]="borrowerInfo.BorFirstName"
+        name="borFirstName">
+      <mat-error>
+        First Name is requied!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input matInput class="form-control" type="text" placeholder="Middle Name" [(ngModel)]="borrowerInfo.BorMiddleName" name="borMiddleName">
+
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Last Name" required [(ngModel)]="borrowerInfo.BorLastName"
+        name="borLastName">
+      <mat-error>
+        Last Name is requied!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Suffix" [(ngModel)]="borrowerInfo.BorNameSuffix" name="borNameSuffix">
+    </mat-form-field>
+
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Primary Phone Nubmer" required [(ngModel)]="borrowerInfo.BorPrimaryPhoneNumber"
+        name="borPrimaryPhoneNumber">
+      <mat-error>
+        Primary Number is requied!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Email Id" required [(ngModel)]="borrowerInfo.BorEmailId" name="borEmailId">
+      <mat-error>
+        Email Id is requied!
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+</div>
+<div>
+    <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="continueWithLoanApp()">Continue W/Loan App </button>
+    <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="inviteCustomer()">Invite Customer</button>
+</div>

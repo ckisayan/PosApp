@@ -1,0 +1,72 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+  <ng-template matStepperIcon="edit">
+    <mat-icon>check</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="done">face</ng-template>
+  <mat-step [stepControl]="borrowerInfoFormGroup" [completed]="true">
+    <ng-template matStepLabel >Borrower Info</ng-template>
+    <app-borrower-info-sl></app-borrower-info-sl>
+    <div class="partitionNextPrevButtons">
+      <button (click)="goBack(stepper)" type="button" [disabled]="stepper.selectedIndex === 0">Previous</button>
+      <button (click)="goForward(stepper)" type="button" [disabled]="stepper.selectedIndex === stepper._steps.length-1">Next</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="loanTermsFormGroup" [completed]="false" class="partition">
+    <ng-template matStepLabel="LoanTerm" matStepperIcon="check">Loan Terms
+      <mat-icon>check</mat-icon>
+    </ng-template>
+    <app-loan-terms></app-loan-terms>
+    <div class="partitionNextPrevButtons">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Continue</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="propertyInfoFormGroup" [completed]="false">
+    <ng-template matStepLabel>Property Info</ng-template>
+    <app-borrower-info></app-borrower-info>
+    <div>
+      <button mat-button matStepperPrevious (click)="SaveStreamlineAppData('Propinfo')">Back</button>
+      <button mat-button matStepperNext (click)="SaveStreamlineAppData('Propinfo')">Continue</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="EmploymentIncomeFormGroup" [completed]="false">
+    <ng-template matStepLabel>Employment/Income</ng-template>
+    <app-borrower-info></app-borrower-info>
+    <div>
+      <button mat-button matStepperPrevious (click)="SaveStreamlineAppData('EmploymentIncome')">Back</button>
+      <button mat-button matStepperNext (click)="SaveStreamlineAppData('EmploymentIncome')">Continue</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="AssetsFormGroup" [completed]="false">
+    <ng-template matStepLabel>Assets</ng-template>
+    <app-borrower-info></app-borrower-info>
+    <div>
+      <button mat-button matStepperPrevious (click)="SaveStreamlineAppData('Assets')">Back</button>
+      <button mat-button matStepperNext (click)="SaveStreamlineAppData('Assets')">Continue</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="LiabilitiesFormGroup" [completed]="false">
+    <ng-template matStepLabel>Liabilities</ng-template>
+    <app-borrower-info></app-borrower-info>
+    <div>
+      <button mat-button matStepperPrevious (click)="SaveStreamlineAppData('Liabilities')">Back</button>
+      <button mat-button matStepperNext (click)="SaveStreamlineAppData('Liabilities')">Continue</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="DetailsOfTransactionFormGroup" [completed]="false">
+    <ng-template matStepLabel>Details of Transaction</ng-template>
+    <app-borrower-info></app-borrower-info>
+    <div>
+      <button mat-button matStepperPrevious (click)="SaveStreamlineAppData('DetailsOfTransaction')">Back</button>
+      <button mat-button matStepperNext (click)="SaveStreamlineAppData('DetailsOfTransaction')">Continue</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="DeclarationFormGroup" [completed]="false">
+    <ng-template matStepLabel>Declaration</ng-template>
+    <app-borrower-info></app-borrower-info>
+    <div>
+      <button mat-button matStepperPrevious (click)="SaveStreamlineAppData('Declaration')">Back</button>
+      <button mat-button matStepperNext (click)="SaveStreamlineAppData('Declaration')">Continue</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

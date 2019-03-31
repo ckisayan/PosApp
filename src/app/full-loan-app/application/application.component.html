@@ -1,0 +1,39 @@
+<form borrowerInfo="ngForm" class="form-horizontal">
+  <mat-card class="borPanel">
+    <mat-card-title>
+      <button mat-raised-button class="fullLoanApp-primary-button" (click)="loanSetupSideNav.open()">Show Task</button>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-sidenav-container class="side-nav-container">
+        <mat-sidenav #loanSetupSideNav class="sidenav" mode="side" visibility="visible" name="loanSetupSideNav">
+          <!--<section class="side-menu-section-common section-side-closer" (click)="borsidenav.close()">X</section>-->
+          <section class="side-menu-section-common side-menu-section-header"></section>
+          <section class="side-menu-section-common sectionClicked" (click)="navigateToSection('employmentIncome')" #employmentIncome>Employment-Income</section>
+          <section class="side-menu-section-common sectionClicked" (click)="navigateToSection('incomeOther')" #incomeOther>Other Income</section>
+          <section class="side-menu-section-common sectionNotClicked" (click)="navigateToSection('assetsDetails')" #assetsDetails>Assets Details</section>
+          <section class="side-menu-section-common sectionNotClicked" (click)="navigateToSection('reoDetails')" #reoDetails>REO Details</section>
+          <section class="side-menu-section-common sectionNotClicked" (click)="navigateToSection('liabilityDetails')" #liabilityDetails>Liability Details</section>
+          
+         
+        </mat-sidenav>
+        <div class="div-main">
+          <div *ngIf="employmentIncomeVisible">
+            <app-employment-income (childMenuEvent)="navigateNext($event)"></app-employment-income>
+          </div>
+          <div *ngIf="incomeOtherVisible">
+            <app-income-other (childMenuEvent)="navigateNext($event)"></app-income-other>
+          </div>
+          <div *ngIf="assetsDetailsVisible">
+            <app-assets-details (childMenuEvent)="navigateNext($event)"></app-assets-details>
+          </div>
+          <div *ngIf="reoDetailsVisible">
+            <app-reo-details (childMenuEvent)="navigateNext($event)"></app-reo-details>
+          </div>
+          <div *ngIf="liabilityDetailsVisible">
+            <app-liability-details (childMenuEvent)="navigateNext($event)"></app-liability-details>
+          </div>
+        </div>
+      </mat-sidenav-container>
+    </mat-card-content>
+  </mat-card>
+</form>

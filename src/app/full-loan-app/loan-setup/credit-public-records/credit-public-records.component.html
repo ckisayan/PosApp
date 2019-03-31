@@ -1,0 +1,58 @@
+<div class="workspace">
+
+  <!--
+
+
+Number of legal Derogatory and as of date
+
+Common to all
+YearsInFile
+LegalFileDate
+
+
+bk
+BanruptcyAmt
+
+tax lien
+TaxLienAmt
+
+
+Foreclosure
+
+short sales
+
+Judgement
+JuegementAmt
+
+collection 
+
+UCC - Uniform Commercial Code (UCC) filing
+-->
+  <div class="onerow">
+    Number of legal Derogatory and as of date 04/12/20xx is N
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="LoanBranchId"  placeholder="Type"
+        required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Bankruptcy">Bankruptcy</mat-option>
+        <mat-option value="TaxLien">Tax Lien</mat-option>
+        <mat-option value="Judgement">Judgement</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!--
+    <mat-form-field class="matformfield">
+
+      <input matInput placeholder="Date Filed">
+      <mat-datepicker-toggle matSuffix ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    -->
+  </div>
+</div>
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveOrderViewCredit('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveOrderViewCredit('next')">Next</button>
+</div>

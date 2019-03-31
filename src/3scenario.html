@@ -1,0 +1,1175 @@
+<html>
+<head>
+    <script src="./assets/scenario-template/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" crossorigin="anonymous" />
+    <script>
+        function setPageOrientation() {
+            window.print();
+        }
+    </script>
+    <style>
+        .main-content .loan-details-wrap .loan-detail .loan-details-content {
+            margin-left: 16.667%;
+            font-family: "Lato";
+        }
+
+        .panel-wrap {
+            background: #ffffff;
+        }
+
+        .element-wrap .loan-element {
+            width: 15.67%;
+        }
+
+        .element-wrap-2 .loan-element {
+            width: 30.67%;
+        }
+
+        .element-wrap .loan-element .loan-label {
+            margin: 0 0 15px 0;
+            font-family: "Lato";
+            font-size: 12px;
+            color: #ddd !important;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .element-wrap .loan-element .loan-value {
+            margin: 0 0 15px 0;
+            font-family: "Lato";
+            font-size: 14px;
+            color: #193a60 !important;
+            line-height: 1;
+            margin-bottom: 0px;
+        }
+
+        .details-panel {
+            padding: 25px 20px 0px 20px;
+        }
+
+        .details-header {
+            font-size: 17px;
+            font-family: "Lato";
+            color: #193a60;
+            margin: (0, 0, 15px, 0);
+            padding: (0, 0, 5px, 0);
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .property-desc-header {
+            text-align: center;
+            font-size: 18px;
+            color: #193a60 !important;
+            font-weight: bolder;
+        }
+
+        .single-scenario-div {
+            border-style: solid !important;
+            border: 1px;
+            border-color: green;
+            margin-top: 1%;
+        }
+
+        .product-desc-header {
+            border-bottom: none;
+            text-align: center;
+            font-size: 25px !important;
+            color: #193a60 !important;
+            font-weight: bolder;
+            margin-left: 2% !important;
+            font-family: "Lato" !important;
+            margin-top: -15px !important;
+        }
+
+        .rate-apr-label {
+            font-size: 17px !important;
+            color: #2f4d6f !important;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            font-family: "Lato";
+            line-height: 1;
+        }
+
+        .rate-apr-value {
+            font-size: 17px !important;
+            font-weight: bold !important;
+            margin: 0 0 10px 0;
+            font-family: "Lato";
+            color: #2f4d6f !important;
+            line-height: 1;
+        }
+
+        .total-values-div {
+            text-align: center;
+            margin-top: 13px;
+        }
+
+        .total-values-label {
+            color: #2f4d6f !important;
+            font-weight: bold;
+            font-size: 16px !important;
+            margin-bottom: 10px;
+        }
+
+        .total-values-value {
+            color: #2f4d6f !important;
+            font-weight: bold;
+            font-size: 20px !important;
+            margin-top: -7px;
+        }
+
+        .total-monthly-payment {
+            color: #2f4d6f !important;
+            font-weight: bold;
+            font-size: 25px !important;
+            margin-top: -7px;
+        }
+
+        .submit-page-main-content {
+            margin-top: -34px !important;
+        }
+
+        .submit-page-container {
+            margin-left: 1.6667% !important;
+        }
+
+        .submit-page-header-msg {
+            margin-left: 20px;
+            margin-bottom: -6px;
+            color: #193a60;
+            font-size: 20px;
+        }
+
+        .element-wrap-3 .loan-element {
+            width: 33.33%;
+        }
+
+        .split-up-div {
+            margin-top: -25px !important;
+        }
+
+        .split-up-header {
+            color: #2f4d6f !important;
+            font-weight: bold;
+            font-size: 15px !important;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .split-up-value-left {
+            float: left;
+            width: 80%;
+            color: #ddd !important;
+        }
+
+        .split-up-value-right {
+            float: right;
+            text-align: right;
+            width: 20%;
+            color: #2f4d6f !important;
+            font-weight: bold;
+        }
+
+        .split-up-value-total {
+            border-top: 1px solid #ddd;
+            margin-bottom: 11px;
+            margin-top: 5px;
+        }
+
+        .header-disclaimer-1 {
+            font-size: 14px;
+            color: #193a60 !important;
+        }
+
+        .header-disclaimer-2 {
+            font-size: 11px;
+            color: #193a60 !important;
+        }
+
+        .address-1 {
+            color: #193a60 !important;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .address-2 {
+            color: #193a60 !important;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .footer-disclaimer {
+            color: #193a60 !important;
+            font-size: 12px !important;
+            height: auto !important;
+            overflow-y: auto !important;
+        }
+
+        .loan-scenarios {
+            width: 100%;
+            font-family: "Lato";
+            color: white;
+            padding-top: 10px;
+            padding-right: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+            .loan-scenarios .div-borrower-name {
+                width: 100%;
+                font-size: 20px;
+                padding-left: 5px;
+                margin: 5px;
+                margin-left: 1.3%;
+                font-family: "Lato";
+            }
+
+                .loan-scenarios .div-borrower-name .table-col1 {
+                    width: 60%;
+                    display: inline-block;
+                    position: relative;
+                    top: 18px;
+                }
+
+                    .loan-scenarios .div-borrower-name .table-col1 .pad-table-col {
+                        padding-top: 12px;
+                        padding-bottom: 13px;
+                        font-size: 16px;
+                    }
+
+                .loan-scenarios .div-borrower-name .status-wrap .table-col2 {
+                    width: 72%;
+                    display: inline-block;
+                    padding-right: 15px;
+                }
+
+                    .loan-scenarios .div-borrower-name .status-wrap .table-col2 .icons {
+                        width: 14%;
+                        float: right;
+                        text-align: center;
+                        font-size: 12px;
+                        cursor: pointer;
+                        top: 26px;
+                    }
+
+                        .loan-scenarios .div-borrower-name .status-wrap .table-col2 .icons span {
+                            white-space: pre;
+                            padding-left: 4px;
+                        }
+
+            .loan-scenarios .table-row {
+                width: 100%;
+                font-size: 14px;
+                padding-left: 5px;
+                margin: 5px;
+            }
+
+            .loan-scenarios .table-row-removeBorder {
+                border: 0px;
+            }
+
+            .loan-scenarios .scenario-name {
+                font-size: 20px;
+                text-align: center;
+                color: #193a60 !important;
+                font-family: "Lato";
+            }
+
+            .loan-scenarios .scenario-col-div {
+                width: 96%;
+                text-align: center;
+                margin: auto;
+            }
+
+            .loan-scenarios .table-1Scenario .table-col1 {
+                width: 97%;
+                float: left;
+                margin-left: 1%;
+                margin-right: 1%;
+                position: relative;
+            }
+
+            .loan-scenarios .table-1Scenario .scenariodiv-border {
+                border: solid 2px #193a60;
+            }
+
+            .loan-scenarios .table-2Scenarios .table-col1 {
+                width: 34%;
+                float: left;
+                margin-left: 15%;
+                margin-right: 2%;
+                position: relative;
+                border: solid 2px #193a60;
+                background-color: lightgray !important;
+            }
+
+            .loan-scenarios .table-2Scenarios .table-col2 {
+                width: 34%;
+                float: left;
+                margin-right: 15%;
+                position: relative;
+                border: solid 2px #193a60;
+            }
+
+            .loan-scenarios .table-2Scenarios .scenariodiv-border {
+                border: solid 2px #c5ced7;
+                background-color: white !important;
+            }
+
+            .loan-scenarios .table-3Scenarios .table-col1 {
+                width: 32.5%;
+                margin-right: 1%;
+                position: relative;
+                float: left;
+                border: solid 2px #193a60;
+                background-color: lightgray !important;
+            }
+
+            .loan-scenarios .table-3Scenarios .table-col2 {
+                width: 32.5%;
+                margin-right: 1%;
+                position: relative;
+                float: left;
+                border: solid 2px #193a60;
+            }
+
+            .loan-scenarios .table-3Scenarios .table-col3 {
+                width: 32.5%;
+                position: relative;
+                float: left;
+                border: solid 2px #193a60;
+                background-color: lightgray !important;
+            }
+
+            .loan-scenarios .table-3Scenarios .scenariodiv-border {
+                border: solid 2px #c5ced7;
+                background-color: white !important;
+            }
+
+        .shareScenario-button {
+            border-radius: 5px !important;
+            margin: 5px;
+            width: 147px !important;
+        }
+
+        .feeBreakup {
+            width: 100%;
+            padding-left: 5px;
+            padding-right: 5px;
+            display: flow-root;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+            .feeBreakup .div-fee-title {
+                border-bottom: solid 1px #c5ced7;
+                text-align: left;
+                font-size: 17px;
+                color: #193a60 !important;
+                font-family: "Lato";
+                width: 100%;
+                /*margin-left: 3%;*/
+                /*padding-left: 5px;*/
+                margin-bottom: 5px;
+                display: flow-root;
+            }
+
+                .feeBreakup .div-fee-title .fee-title-table-col1 {
+                    width: 75%;
+                    float: left;
+                    cursor: pointer;
+                }
+
+                .feeBreakup .div-fee-title .fee-title-table-col2 {
+                    width: 25%;
+                    float: left;
+                    cursor: pointer;
+                }
+
+                    .feeBreakup .div-fee-title .fee-title-table-col2 .icons {
+                        width: 29%;
+                        float: right;
+                    }
+
+                    .feeBreakup .div-fee-title .fee-title-table-col2 .iconSize {
+                        font-size: 15px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                    }
+
+            .feeBreakup .div-add-fee {
+                text-align: left;
+                font-size: 15px;
+                color: #193a60;
+                font-family: "Lato";
+                width: 96%;
+                margin-left: 3%;
+                padding-left: 5px;
+                margin-bottom: 5px;
+                display: inline-block;
+                margin-top: 20px;
+            }
+
+                .feeBreakup .div-add-fee .addfee-table-col1 {
+                    width: 60%;
+                    float: left;
+                }
+
+                .feeBreakup .div-add-fee .addfee-table-col2 {
+                    width: 21%;
+                    float: left;
+                }
+
+                    .feeBreakup .div-add-fee .addfee-table-col2 .icons {
+                        width: 25%;
+                        float: left;
+                        cursor: pointer;
+                    }
+
+            .feeBreakup .fee-table-row {
+                width: 96%;
+                font-size: 13px;
+                margin: 0px;
+                font-family: "Lato";
+                color: #193a60;
+                margin-left: 0%;
+                display: inline-block;
+            }
+
+            .feeBreakup .feeTotal {
+                border-top: solid 1px #c5ced7;
+                padding-top: 6px;
+                font-family: "Lato";
+            }
+
+            .feeBreakup .fee-table-col0 {
+                width: 8%;
+                float: left;
+                text-align: left;
+                padding-bottom: 3px;
+                word-wrap: break-word;
+            }
+
+            .feeBreakup .fee-table-col1 {
+                width: 62%;
+                float: left;
+                text-align: left;
+                padding-bottom: 3px;
+                word-wrap: break-word;
+            }
+
+            .feeBreakup .fee-cc-table-col2 {
+                width: 30%;
+                float: left;
+                text-align: right;
+                padding-bottom: 3px;
+                position: relative;
+            }
+
+            .feeBreakup .fee-table-col2 {
+                width: 36%;
+                float: left;
+                text-align: right;
+                padding-bottom: 3px;
+                position: relative;
+            }
+
+            .feeBreakup .closing-cost-bold {
+                font-weight: normal;
+            }
+
+            .feeBreakup .fee-closing-costs {
+                /*text-decoration: underline;
+            font-weight: bold;
+            text-underline-position: under;*/
+                cursor: pointer;
+            }
+
+            .feeBreakup .fees-placeholder-label {
+                position: absolute;
+                pointer-events: none;
+                left: 12%;
+                font-family: Lato, sans-serif;
+                font-size: 14px;
+                top: 10%;
+                color: #193a60;
+            }
+
+            .feeBreakup .fees-form-control {
+                display: inline-block;
+                width: 90%;
+                height: 27px;
+                padding: 5px 14px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333333;
+                background-color: #fff !important;
+                background-image: none;
+                border: 2px solid #c5ced7;
+                border-radius: 5px;
+            }
+
+        .loanparameters {
+            color: #193a60;
+        }
+
+            .loanparameters .tabl-row {
+                padding-top: 11px;
+                font-size: 12px;
+                width: 99%;
+                position: relative;
+            }
+
+            .loanparameters .table-3columns .tabl-col0 {
+                color: #193a60 !important;
+                width: 49.5%;
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                text-align: left;
+                word-wrap: break-word;
+            }
+
+            .loanparameters .table-3columns .tabl-col1 {
+                color: #193a60 !important;
+                width: 49.5%;
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                text-align: left;
+                word-wrap: break-word;
+            }
+
+            .loanparameters .table-3columns .tabl-col2 {
+                color: #193a60 !important;
+                width: 49.5%;
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                text-align: left;
+                word-wrap: break-word;
+            }
+
+            .loanparameters .table-2columns .tabl-col0 {
+                width: 49.5%;
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                text-align: left;
+                word-wrap: break-word;
+            }
+
+            .loanparameters .table-2columns .tabl-col1 {
+                width: 49.5%;
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                text-align: left;
+                word-wrap: break-word;
+            }
+
+            .loanparameters .table-2columns .tabl-col2 {
+                width: 49.5%;
+                position: relative;
+                display: inline-block;
+                padding-left: 22px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                text-align: left;
+            }
+
+            .loanparameters .txt {
+                color: #193a60 !important;
+                font-size: 13px;
+                font-family: "Lato";
+            }
+
+            .loanparameters .rateapr {
+                font-size: 16px !important;
+                color: #193a60 !important;
+                font-weight: bolder;
+            }
+
+        .subtxt {
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .subtxt-1column {
+            width: 100%;
+        }
+
+        .subtxt-2columns {
+            width: 100%;
+        }
+
+            .subtxt-2columns .subtxt-col1 {
+                width: 100%;
+                position: relative;
+                display: inline-block;
+            }
+
+            .subtxt-2columns .subtxt-col2 {
+                width: 100%;
+                position: relative;
+                display: inline-block;
+            }
+
+
+        .linktxtlabel {
+            color: #193a60 !important;
+            font-size: 14px !important;
+            font-weight: bolder;
+        }
+
+        .MonthlyPaymentValue {
+            font-size: 18px !important;
+            color: #193a60 !important;
+            font-weight: bolder;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .linktxtValue {
+            color: #193a60 !important;
+            font-size: 15px !important;
+            font-weight: bolder;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .headingtxt {
+            color: #193a60;
+            font-size: 18px;
+            font-family: "Lato";
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .last-updated-date {
+            color: black;
+            font-style: italic;
+            text-align: right;
+            font-weight: bold;
+            font-size: 13px;
+            margin-right: 1px;
+        }
+
+        .loan-header-wrap {
+            top: 70px !important;
+        }
+
+        .loan-header-scenario {
+            padding: 0px 45px 12px 15px;
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .loan-header-wrap-proxy {
+            top: 0px !important;
+            padding-top: 0px !important;
+        }
+
+        .create {
+            padding-left: 9px !important;
+        }
+
+        .pad-page-proxy {
+            padding-top: 60px !important;
+        }
+
+        .blue-color {
+            color: #193a60 !important;
+        }
+
+        .scenarios-heading {
+            text-align: center;
+            margin-bottom: -62px;
+            margin-right: 335px;
+            font-size: 24px;
+            color: #193a60 !important;
+            font-weight: bold;
+        }
+
+        .gray-color {
+            color: #757575 !important;
+        }
+    </style>
+</head>
+<body onload="setPageOrientation()" style="width:96%;padding:10mm">
+    <!--Page 1 starts -->
+    <div class="row">
+        <img src="@companyLogo@" style="float:left;margin-left:8px;">
+        <p class="scenarios-heading" style="margin-top: 19px;"> Scenarios </p>
+        <p style="text-align: right;margin-right: 110px;margin-bottom: -95px;margin-top: 7px;">
+            <span style="color:#193a60!important;font-weight:bold;">@ContactName@ </span>
+            <br>@ContactType@ <br>@ContactLicense@
+            <br>
+            <span style="color:#193a60!important">
+                <img src="@phoneIcon@" class="img" style="height:14px"> @ContactPhone@
+            </span>
+            <br>
+            <span style="color:#193a60!important">
+                <img src="@emailIcon@" class="img" style="height:14px"> @ContactEmail@
+            </span>
+        </p>
+        <!--margin-right: 29px;-->
+        <img src="@PicURL@" style="float:right;height: 103px;width: 103px;margin-top: -2px;">
+    </div>
+    <div class="loan-scenarios" style="margin-left:24px">
+        <div class="main-content row">
+            <div>
+                <p style="text-align:justify;margin-top:-5px;font-size:12pt;">
+                    <span class="header-disclaimer-1"></span>
+                    <br />
+                    <span class="header-disclaimer-2">@CompanyHeader@</span>
+                </p>
+                <p style="height:1.75%"></p>
+                <p>
+                    <span class="address-1"> Dear @FirstName@, </span>
+                    <br />
+                    <span class="address-2">
+                        Please find below comparison of various mortgage scenarios to see your monthly payment and total loan costs.
+                    </span>
+                </p>
+            </div>
+            <p style="height:2%"></p>
+            <div class="pad-page table-3Scenarios">
+                <div class="table-col1">
+                    <div class="scenario-col-div">
+                        <div id="#subsectionid_1">
+                            <div class="scenario-name">
+                                <span class="blue-color"> @PropertyDesc@</span>
+                            </div>
+                            <div class="scenariodiv-border scenario1" style="min-height: 500px;">
+                                <div>
+                                    <div class="headingtxt"><span class="blue-color">@ProductDesc@</span></div>
+                                    <div class="loanparameters ">
+                                        <div class="tabl-row table-2columns">
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Loan Purpose</span><br>
+                                                <span class="txt ">@LoanPurpose@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Property Type</span><br>
+                                                <span class="txt ">@PropertyType@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Loan Type</span><br>
+                                                <span class="txt ">@LoanType@</span>
+                                            </div>
+                                            <div class="tabl-col0">
+                                                <span class="gray-color">Occupancy Type</span><br>
+                                                <span class="txt ">@OccType@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Loan Program</span><br>
+                                                <span class="txt ">@LoanProgram@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Purchase Price</span><br>
+                                                <span class="txt ">@PurchasePrice@</span>
+                                            </div>
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Loan Amount</span><br>
+                                                <span class="txt ">@LoanAmount@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Second Mortgage</span><br>
+                                                <span class="txt ">@SecMortgage@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Loan Term</span><br>
+                                                <span class="txt ">@LoanTerm@</span>
+                                            </div>
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Property Zip</span><br>
+                                                <span class="txt ">@PropZip@</span>
+                                            </div>
+                                            <div class="tabl-col1">
+                                                <span class="rateapr ">Rate</span><br>
+                                                <span class="rateapr ">@Rate@</span>
+                                            </div>
+                                            <div class="tabl-col2">
+                                                <span class="rateapr ">APR</span><br>
+                                                <span class="rateapr ">@APR@</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabl-row subtxt-1column">
+                                        <div class="subtxt subtxt-col1">
+                                            <span class="linktxtlabel">Est.Monthly Payment<br></span>
+                                            <span class="MonthlyPaymentValue">@MonthlyPayment@</span>
+                                        </div>
+                                        <div class="subtxt subtxt-col2">
+                                            <span class="linktxtlabel">@LabelTotalCashToClose@<br></span>
+                                            <span class="linktxtValue">@TotalCashReq@</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="last-updated-date">
+                                <span>Last Updated: @LastUpdated@</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-col2" style="background-color:lightgray!important;">
+                    <div class="scenario-col-div">
+                        <div id="#subsectionid_1">
+                            <div class="scenario-name">
+                                <span class="blue-color">@PropertyDesc1@</span>
+                            </div>
+                            <div class="scenariodiv-border scenario2" style="min-height: 500px;">
+                                <div>
+                                    <div class="headingtxt"><span class="blue-color">@ProductDesc1@</span></div>
+                                    <div class="loanparameters ">
+                                        <div class="tabl-row table-2columns">
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Loan Purpose</span><br>
+                                                <span class="txt ">@LoanPurpose1@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Property Type</span><br>
+                                                <span class="txt ">@PropertyType1@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Loan Type</span><br>
+                                                <span class="txt ">@LoanType1@</span>
+                                            </div>
+                                            <div class="tabl-col0">
+                                                <span class="gray-color">Occupancy Type</span><br>
+                                                <span class="txt ">@OccType1@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Loan Program</span><br>
+                                                <span class="txt ">@LoanProgram1@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Purchase Price</span><br>
+                                                <span class="txt ">@PurchasePrice1@</span>
+                                            </div>
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Loan Amount</span><br>
+                                                <span class="txt ">@LoanAmount1@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Second Mortgage</span><br>
+                                                <span class="txt ">@SecMortgage1@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Loan Term</span><br>
+                                                <span class="txt ">@LoanTerm1@</span>
+                                            </div>
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Property Zip</span><br>
+                                                <span class="txt ">@PropZip1@</span>
+                                            </div>
+                                            <div class="tabl-col1">
+                                                <span class="rateapr ">Rate</span><br>
+                                                <span class="rateapr ">@Rate1@</span>
+                                            </div>
+                                            <div class="tabl-col2">
+                                                <span class="rateapr ">APR</span><br>
+                                                <span class="rateapr ">@APR1@</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ng-reflect-ng-class="[object Object]" class="tabl-row subtxt-1column">
+                                        <div class="subtxt subtxt-col1">
+                                            <span class="linktxtlabel">Est.Monthly Payment<br></span>
+                                            <span class="MonthlyPaymentValue">@MonthlyPayment1@</span>
+                                        </div>
+                                        <div class="subtxt subtxt-col2">
+                                            <span class="linktxtlabel">@LabelTotalCashToClose1@<br></span>
+                                            <span class="linktxtValue">@TotalCashReq1@</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="last-updated-date">
+                                <span>Last Updated: @LastUpdated1@</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-col3">
+                    <div class="scenario-col-div">
+                        <div id="#subsectionid_1">
+                            <div class="scenario-name">
+                                <span class="blue-color"> @PropertyDesc2@</span>
+                            </div>
+                            <div class="scenariodiv-border scenario3" style="min-height: 500px;">
+                                <div>
+                                    <div class="headingtxt"><span class="blue-color">@ProductDesc2@</span></div>
+                                    <div class="loanparameters ">
+                                        <div class="tabl-row table-2columns">
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Loan Purpose</span><br>
+                                                <span class="txt ">@LoanPurpose2@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Property Type</span><br>
+                                                <span class="txt ">@PropertyType2@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Loan Type</span><br>
+                                                <span class="txt ">@LoanType2@</span>
+                                            </div>
+                                            <div class="tabl-col0">
+                                                <span class="gray-color">Occupancy Type</span><br>
+                                                <span class="txt ">@OccType2@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Loan Program</span><br>
+                                                <span class="txt ">@LoanProgram2@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Purchase Price</span><br>
+                                                <span class="txt ">@PurchasePrice2@</span>
+                                            </div>
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Loan Amount</span><br>
+                                                <span class="txt ">@LoanAmount2@</span>
+                                            </div>
+                                            <div class="tabl-col1 ">
+                                                <span class="gray-color">Second Mortgage</span><br>
+                                                <span class="txt ">@SecMortgage2@</span>
+                                            </div>
+                                            <div class="tabl-col2 ">
+                                                <span class="gray-color">Loan Term</span><br>
+                                                <span class="txt ">@LoanTerm2@</span>
+                                            </div>
+                                            <div class="tabl-col0 ">
+                                                <span class="gray-color">Property Zip</span><br>
+                                                <span class="txt ">@PropZip2@</span>
+                                            </div>
+                                            <div class="tabl-col1">
+                                                <span class="rateapr ">Rate</span><br>
+                                                <span class="rateapr ">@Rate2@</span>
+                                            </div>
+                                            <div class="tabl-col2">
+                                                <span class="rateapr ">APR</span><br>
+                                                <span class="rateapr ">@APR2@</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ng-reflect-ng-class="[object Object]" class="tabl-row subtxt-1column">
+                                        <div class="subtxt subtxt-col1">
+                                            <span class="linktxtlabel">Est.Monthly Payment<br></span>
+                                            <span class="MonthlyPaymentValue">@MonthlyPayment2@</span>
+                                        </div>
+                                        <div class="subtxt subtxt-col2">
+                                            <span class="linktxtlabel">@LabelTotalCashToClose2@<br></span>
+                                            <span class="linktxtValue">@TotalCashReq2@</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="last-updated-date">
+                                <span>Last Updated: @LastUpdated2@</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="height:2%"></p>
+        <div class="main-content row">
+            <!--margin-left:19px;-->
+            <div class="footer-disclaimer" style="text-align:justify;">
+                @companyNote@
+            </div>
+        </div>
+    </div>
+    <!-- Page 1 ends -->
+    <!-- Page 2 starts -->
+    <div style="page-break-before: always!important;"></div>
+    <div style="padding-top:10mm;">
+        <div class="row">
+            <img src="@companyLogo@" style="float:left;margin-left:8px;">
+            <p class="scenarios-heading" style="margin-top: 19px;">
+                Scenarios <br />
+                <span class="blue-color" style="margin-left:36%"> Continued... </span>
+            </p>
+            <p style="text-align: right;margin-right: 110px;margin-bottom: -95px;margin-top: 7px;">
+                <span style="color:#193a60!important;font-weight:bold;">@ContactName@ </span>
+                <br>@ContactType@ <br>@ContactLicense@
+                <br>
+                <span style="color:#193a60!important">
+                    <img src="@phoneIcon@" class="img" style="height:14px"> @ContactPhone@
+                </span>
+                <br>
+                <span style="color:#193a60!important">
+                    <img src="@emailIcon@" class="img" style="height:14px"> @ContactEmail@
+                </span>
+            </p>
+            <img src="@PicURL@" style="float:right;height: 103px;width: 103px;margin-top: -2px;">
+        </div>
+        <div class="loan-scenarios" style="margin-left:24px">
+            <div class="main-content row">
+                <div>
+                    <p style="height:0.5%"></p>
+                    <div class="pad-page table-3Scenarios">
+                        <div class="table-col1">
+                            <div class="scenario-col-div">
+                                <div id="#subsectionid_1">
+                                    <div class="scenario-name">
+                                        <span class="blue-color"> @PropertyDesc@</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="scenariodiv-border cashToClose1" style="min-height: 300px;">
+                                        <div>
+                                            <div class="feeBreakup">
+                                                <div class="div-fee-title"><span class="blue-color">Monthly Payment Summary</span></div>
+                                                @MonthlyPaymentSplitUp@
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="feeBreakup">
+                                                <div class="div-fee-title"><span class="blue-color">@LabelTotalCashToClose@</span></div>
+                                                @TotalCashReqSplitUp@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="#subsectionid_3" style="clear: both;padding-bottom: 20px;"></div>
+                                <div>
+                                    <div class="scenariodiv-border feeList1" style="min-height: 366px;">
+                                        <div class="feeBreakup">
+                                            <div class="div-fee-title">
+                                                <div class="fee-title-table-col1">
+                                                    <span class="blue-color">Closing Costs</span>
+                                                </div>
+                                            </div>
+                                            @TotalClosingCostsSplitUp@
+                                        </div>
+                                    </div>
+                                    <div class="last-updated-date">
+                                        <span>L - Lender Fees, T - Third Party Fees, * - Service Link (provider)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-col2" style="background-color:lightgray!important;">
+                            <div class="scenario-col-div">
+                                <div id="#subsectionid_1">
+                                    <div class="scenario-name">
+                                        <span class="blue-color">@PropertyDesc1@</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="scenariodiv-border cashToClose2" style="min-height: 300px;">
+                                        <div>
+                                            <div class="feeBreakup">
+                                                <div class="div-fee-title"><span class="blue-color">Monthly Payment Summary</span></div>
+                                                @MonthlyPaymentSplitUp1@
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="feeBreakup">
+                                                <div class="div-fee-title"><span class="blue-color">@LabelTotalCashToClose1@</span></div>
+                                                @TotalCashReqSplitUp1@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="#subsectionid_3" style="clear: both;padding-bottom: 20px;"></div>
+                                <div>
+                                    <div ng-reflect-class-name="scenariodiv-border feeList2" class="scenariodiv-border feeList2" style="min-height: 366px;">
+                                        <div class="feeBreakup">
+                                            <div class="div-fee-title">
+                                                <div class="fee-title-table-col1">
+                                                    <span class="blue-color">Closing Costs</span>
+                                                </div>
+                                                <div class="fee-title-table-col2">
+                                                    <div class="icons">
+                                                        <i aria-hidden="true" class="fa fa-pencil iconSize"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @TotalClosingCostsSplitUp1@
+                                        </div>
+                                    </div>
+                                    <div class="last-updated-date">
+                                        <span>L - Lender Fees, T - Third Party Fees, * - Service Link (provider)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-col3">
+                            <div class="scenario-col-div">
+                                <div id="#subsectionid_1">
+                                    <div class="scenario-name">
+                                        <span class="blue-color"> @PropertyDesc2@</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="scenariodiv-border cashToClose3" style="min-height: 300px;">
+                                        <div>
+                                            <div class="feeBreakup">
+                                                <div class="div-fee-title"><span class="blue-color">Monthly Payment Summary</span></div>
+                                                @MonthlyPaymentSplitUp2@
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="feeBreakup">
+                                                <div class="div-fee-title"><span class="blue-color">@LabelTotalCashToClose2@</span></div>
+                                                @TotalCashReqSplitUp2@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="#subsectionid_3" style="clear: both;padding-bottom: 20px;"></div>
+                                <div>
+                                    <div class="scenariodiv-border feeList3" style="min-height: 366px;">
+                                        <div class="feeBreakup">
+                                            <div class="div-fee-title">
+                                                <div class="fee-title-table-col1">
+                                                    <span class="blue-color">Closing Costs</span>
+                                                </div>
+                                                <div class="fee-title-table-col2">
+                                                    <div class="icons">
+                                                        <i aria-hidden="true" class="fa fa-pencil iconSize"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @TotalClosingCostsSplitUp2@
+                                        </div>
+                                    </div>
+                                    <div class="last-updated-date">
+                                        <span>L - Lender Fees, T - Third Party Fees, * - Service Link (provider)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="height:1.75%"></p>
+            <div class="main-content row">
+                <div class="footer-disclaimer" style="text-align:justify;">
+                    @companyNote@
+                </div>
+            </div>
+        </div>
+</body>
+</html>

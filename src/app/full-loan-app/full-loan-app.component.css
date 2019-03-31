@@ -1,0 +1,38 @@
+.tab-group {
+    border: 1px solid #e8e8e8;
+  
+  }
+  
+  .tab-content {
+    padding: 16px;
+    align-items: center;
+    background-color: white;
+  }
+
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.menuIconImg_New{
+    width: 35px;
+    height: 35px;
+}
+/*
+:ng-deep .mat-toolbar{
+  z-index: 998;
+  position: fixed
+}
+::ng-deep .mat-tab-group{
+  margin-top:55px !important;
+}
+
+::ng-deep .mat-tab-header{
+      z-index: 999;
+      width:100vw;
+      position: fixed  !important;
+      
+}
+::ng-deep .mat-tab-body-wrapper{
+    position: relative !important;
+    margin-top:55px;
+}
+*/

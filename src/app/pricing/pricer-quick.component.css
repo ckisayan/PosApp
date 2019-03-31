@@ -1,0 +1,46 @@
+.pricerquickfield-form {
+    min-width: 200px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .fullScreenPricerQuick {
+    width: 100%;
+  }
+  
+  
+.form-control {
+  display: block;
+      width: 87%;
+  height: 35px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: rgb(5, 5, 54);
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.secondryBtn{
+  font-family: "Lato-Semibold";
+  font-size: 17px;
+  border: 1px solid #193a60;
+  background: #ffffff;
+  color: #193a60;
+  padding:5px 15px 5px 15px;
+}
+.primayBtn{
+  font-family: "Lato-Semibold";
+  font-size: 17px;
+  border: 1px solid #0091ff;
+  background: #0091ff;
+  color: #ffffff;
+  padding:5px 15px 5px 15px;
+}

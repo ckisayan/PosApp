@@ -1,0 +1,96 @@
+<div>
+  <!--  <mat-form-field>
+    <mat-select placeholder="Applicants on Loan">
+
+      <mat-option value="option1">App - 1 John & Mary Homeowner</mat-option>
+      <mat-option value="option2">App - 2 Alice & Mike Firstimer</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+-->
+</div>
+<mat-tab-group class="tab-group" [selectedIndex]="selectedTab">
+  <mat-tab label="Setup">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/assets.jpg">
+      </span>Setup
+    </ng-template>
+    <div class="tab-content">
+      <app-loan-setup></app-loan-setup>
+    </div>
+  </mat-tab>
+  <mat-tab label="BorrowerInfo"  >
+    <ng-template mat-tab-label>
+      <span >
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/Person.jpg">Borrower</span>
+    </ng-template>
+    <div class="tab-content">
+      <app-borrower-info #borrowerInfo (childMenuEvent)="navigateNext($event)"></app-borrower-info>
+    </div>
+  </mat-tab>
+  <mat-tab label="Loan Terms">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/term-loan.jpg">
+      </span>
+      Product & Pricing
+    </ng-template>
+    <div class="tab-content">
+      <app-loan-terms></app-loan-terms>
+    </div>
+  </mat-tab>
+  <mat-tab label="Property Info" disabled>
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/property.jpg">
+      </span>
+      Property Info
+    </ng-template>
+    No content
+  </mat-tab>
+  <mat-tab label="Tab 4">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/income.jpg">
+      </span> Application
+    </ng-template>
+    <div class="tab-content">
+      <app-application #borrowerInfo (childMenuEvent)="navigateNext($event)"></app-application>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="asset">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/assets.jpg">
+      </span> Assets
+    </ng-template>
+    No content
+  </mat-tab>
+  <mat-tab label="web_asset">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/liabilities.jpg">
+      </span> Liabilities
+    </ng-template>
+    No content
+  </mat-tab>
+  <mat-tab label="Tab 6">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/summary.png">
+      </span> Details of Transaction
+    </ng-template>
+    No content
+  </mat-tab>
+  <mat-tab label="Tab 6">
+    <ng-template mat-tab-label>
+      <span>
+        <img class="menuIconImg_New" src="..//..//assets/img/loanapp/declare.jpg">
+      </span>Declaration
+    </ng-template>
+    No content
+
+  </mat-tab>
+</mat-tab-group>

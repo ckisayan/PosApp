@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <!--<script src="node_modules/reflect-metadata/Reflect.js"></script>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="845784988839-ootmarqru6l98h3nlajvro1l5samqn4t.apps.googleusercontent.com">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--copy of below style in root-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  
+  <title>Mrg Project</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    #iprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      width: 100%;
+    }
+
+    #iprogress .spinner-icon {
+      margin: auto;
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+      border: solid 2px transparent;
+      border-top-color: #A93439;
+      border-left-color: #A93439;
+      border-radius: 50%;
+      --webkit-animation: iprogress-spinner 400ms cubic-bezier(0.4, 0, 1, 1) infinite;
+      /* animation:iprogress-spinner 400ms linear infinite; */
+    }
+
+    @-webkit-keyframes iprogress-spinner {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes iprogress-spinner {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <lo-app>
+    <div id="tprogress" style="display:block">Loading...</div>
+    <div id="iprogress" style="display:none; margin-top: 100px">
+      <div class="spinner" role="spinner">
+        <div class="spinner-icon"></div>
+      </div>
+    </div>
+    <script>
+      document.getElementById('tprogress').style.display = 'none';
+      document.getElementById('iprogress').style.display = 'block';
+    </script>
+  </lo-app>
+
+  
+
+  <!--<div id="fb-root"></div>-->
+  <script>
+    console.log ("index.html called...");
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    window.fbAsyncInit = function () {
+
+      initFacebook();
+    }
+    function initFacebook() {
+      FB.init({
+        appId: '1853544087997854',
+        cookie: true,  // enable cookies to allow the server to access
+        // the session
+        xfbml: true,  // parse social plugins on this page
+        version: 'v2.12'
+      });
+      console.log('initFacebook call back#########################     ');
+    }
+  </script>
+</body>
+
+</html>

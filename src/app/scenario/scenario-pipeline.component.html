@@ -1,0 +1,62 @@
+
+<p *ngIf="!filtersLoaded" class="text-center">
+    <mat-spinner></mat-spinner>
+</p>
+<div id=ScenarioPipelineSearch class="searchbox-container">
+  <mat-form-field class="searchbox-container">
+    <input class="searchbox-container" matInput placeholder="Search by Borrower, Scenario name..." value="">
+    <span class="search-icon" (click)="SearchPipelineByItem()"></span>
+  </mat-form-field>
+</div>
+<div id="ScenarioPipelineTable" class="">
+  <table class="table">
+    <thead>
+      <th>
+        <span>Borrower Name</span>
+        <span (click)="SortScenarioTable('BorrowerName')"></span>
+      </th>
+      <th>
+        <span>Short Desc</span>
+        <span (click)="SortScenarioTable('ShortDesc')"></span>
+      </th>
+      <th>
+        <span>Loan Amount</span>
+        <span (click)="SortScenarioTable('LoanAmt')"></span>
+      </th>
+      <th>
+        <span>LTV %</span>
+        <span (click)="SortScenarioTable('LTVPct')"></span>
+      </th>
+      <th>
+        <span>Last Updated Date</span>
+        <span (click)="SortScenarioTable('CreatedDate')"></span>
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let scenario of pipelineScenarioList">
+        <td>
+          <a>
+            <span (click)="openPricerQuickResults(scenario)">{{scenario.BorrowerName}}</span>
+          </a>
+        </td>
+        <td>
+          <span>{{scenario.ScenarioShortDesc}}</span>
+        </td>
+        <td>
+          <span>{{scenario.LoanAmt}}</span>
+        </td>
+        <td>
+          <span>{{scenario.LtvPct}}</span>
+        </td>
+        <td>
+            <span>{{scenario.ScenarioLastUpdatedDate}}</span>
+          </td>
+      </tr>
+
+      <tr class="no-data" *ngIf="pipelineScenarioList.length === 0">
+        <td colspan='6' class="text-center">No records found</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

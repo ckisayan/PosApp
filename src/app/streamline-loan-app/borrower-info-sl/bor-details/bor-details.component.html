@@ -1,0 +1,70 @@
+<div class="workspace">
+  <div>
+    <span class="workspaceheader">Primary Borrower Details (click one)</span>
+  </div>
+
+  <div>
+    <mat-button-toggle-group #group="matButtonToggleGroup" [ngModel]="borrowerInfo.BorRentOwn" name="borRentOwn" class="mat-button-toggle mat-button-toggle-checked">
+      <mat-button-toggle value="PrimaryBorMarried" (click)="setBorMaritalStatus('PrimaryBorMarried')">
+        <mat-icon *ngIf="borrowerInfo.BorMaritalStatus=='PrimaryBorMarried'">checked</mat-icon>
+        <span>Married</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="PrimaryBorSeparated" (click)="setBorMaritalStatus('PrimaryBorSeparated')">
+        <mat-icon *ngIf="borrowerInfo.BorMaritalStatus=='PrimaryBorSeparated'">checked</mat-icon>
+        <span>Separated</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="PrimaryBorUnmarried" (click)="setBorMaritalStatus('PrimaryBorUnmarried')">
+        <mat-icon *ngIf="borrowerInfo.BorMaritalStatus=='PrimaryBorUnmarried'">checked</mat-icon>
+        <span>Unmarried</span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+  </div>
+  <div>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Date of Birth" required [(ngModel)]="borrowerInfo.PrimaryBorDob"
+        name="borFirstName">
+      <mat-error>
+        First Name is requied!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input matInput class="form-control" type="text" placeholder="Years In School" [(ngModel)]="borrowerInfo.PrimaryBorYrsInSchool" name="borMiddleName">
+
+    </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field class="matformfield">
+        <input class="form-control" type="text" matInput placeholder="SSN" required [(ngModel)]="borrowerInfo.PrimaryBorSSN"
+          name="borFirstName">
+        <mat-error>
+          First Name is requied!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="matformfield">
+        <input matInput class="form-control" type="text" placeholder="Re-enter SSN" [(ngModel)]="borrowerInfo.PrimaryBorSSN" name="borMiddleName">
+  
+      </mat-form-field>
+    </div>
+    <div id="ServedInMilitearySection">
+        Have you or your spouse ever served in the military or the national guard (click one)?
+        <div>
+          <mat-button-toggle-group #group="matButtonToggleGroup" [ngModel]="borrowerInfo.ServedInMilitary" name="servedInMilitary"
+            class="mat-button-toggle mat-button-toggle-checked">
+            <mat-button-toggle value="Yes" (click)="setServedInMilitary('Yes')">
+              <mat-icon *ngIf="borrowerInfo.ServedInMilitary=='Yes'">checked</mat-icon>
+              <span>Yes</span>
+            </mat-button-toggle>
+            <mat-button-toggle value="No" (click)="setServedInMilitary('No')">
+              <mat-icon *ngIf="borrowerInfo.ServedInMilitary=='No'">checked</mat-icon>
+              <span>No</span>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+</div>
+
+<div>
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveBorDetails('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveBorDetails('next')">Next</button>
+</div>

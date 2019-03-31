@@ -1,0 +1,97 @@
+<div class="workspace">
+  <div>
+    <span class="workspaceHeader">Basic Loan Info</span>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="FinanceType" [(ngModel)]="loanDetail.FinanceType" placeholder="Purpose of Loan"
+        required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Purchase">Puchase</mat-option>
+        <mat-option value="RefinanceRateTerm">Refinance-Rate/Term</mat-option>
+        <mat-option value="RefinanceCashout">Refinance-Cashout</mat-option>
+        <mat-option value="HomeEquity">Home Equity</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="DocType" [(ngModel)]="loanDetail.DocType" placeholder="Documentation Type"
+        required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Full">Full</mat-option>
+        <mat-option value="StearmlineWithAppraisal">Streamline w/Appraisal</mat-option>
+        <mat-option value="StearmlineWithoutAppraisal">Streamline w/o Appraisal</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Property Value/Purchase Price" required [(ngModel)]="loanDetail.PurchasePriceAmt"
+        name="creditScore">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Loan Amount" [(ngModel)]="loanDetail.LoanAmt" name="LoanAmt">
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Loan Amount" [(ngModel)]="loanDetail.LoanAmt" name="LoanAmt">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Existing 2nd Lien Amt" required [(ngModel)]="loanDetail.ExistingOtherLienAmt"
+        name="ExistingOtherLienAmt">
+    </mat-form-field>
+  </div>
+
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="number" matInput placeholder="Maturity Term" required [(ngModel)]="loanDetail.MaturityTermMonths"
+        name="creditScore">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="OccType" [(ngModel)]="loanDetail.OccupancyType" (blur)="onBlurOccupancyType()"
+        placeholder="Occupancy" required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="OwnerOccupied">Owner Occupied</mat-option>
+        <mat-option value="SecondHome">Second Home</mat-option>
+        <mat-option value="InvestmentProperty">Investment Property</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="impoundsFlag" [(ngModel)]="loanDetail.ImpoundsFlag" placeholder="Impounds Tax/Ins?"
+        required>
+        <mat-option>Select One</mat-option>
+        <mat-option value="Yes">Yes</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <mat-select class="form-control matformfield" name="MortgageInsruanceType" [(ngModel)]="loanDetail.MortgageInsruanceType"
+        placeholder="Mortgage Insurance">
+        <mat-option value="No MI"></mat-option>
+        <mat-option value="LenderPaid">Lender Paid</mat-option>
+        <mat-option value="BorrowerPaid">Borrower Paid</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="onerow">
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Credit Score" required [(ngModel)]="loanDetail.CreditScore"
+        name="creditScore">
+    </mat-form-field>
+    <mat-form-field class="matformfield">
+      <input class="form-control" type="text" matInput placeholder="Requesting Interest Rate" [(ngModel)]="loanDetail.IntRatePct"
+        name="intRatePct">
+    </mat-form-field>
+  </div>
+
+
+</div>
+
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveSubjectProperty('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveSubjectProperty('next')">Next</button>
+</div>

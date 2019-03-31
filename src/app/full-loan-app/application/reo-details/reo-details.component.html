@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+  crossorigin="anonymous">
+
+<div class="workspaceReo">
+  <div>
+    <span class="workspaceHeader">Currently Owned Properties</span>
+  </div>
+  <div class="reoMainDiv">
+
+    <div class="reoBorderDiv">&nbsp;</div>
+    <div class="reoTableDiv reoTableDisplayNone">
+      <table class="reoTabelMain " id="reo_asset_table">
+        <thead>
+
+          <tr class="table_row">
+            <th class="table_hedingTxt"></th>
+            <th class="table_hedingTxt asset-paddingLeft liability-dynamic-text">Property Address</th>
+            <th class="table_hedingTxt table_colrightAlign">Market Value</th>
+            <th class="table_hedingTxt liability-dynamic-text table_colrightAlign">Mortgage Payment</th>
+            <th class="table_hedingTxt">Status</th>
+            <th class="table_hedingTxt"></th>
+            <th class="table_hedingTxt"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table_row add_clickForRow">
+            <td class="table_bodyTxt  asset-paddingLeftcustom" ng-reflect-title="John Hoimeonwer" title="John Hoimeonwer">
+              <span class="fa fa-user"></span>
+            </td>
+            <td class="table_bodyTxt  asset-paddingLeft">1234 Maple St
+              <br>Glendale, CA 91202</td>
+            <td class="table_bodyTxt table_colrightAlign">$ 700,000</td>
+            <td class="table_bodyTxt table_colrightAlign">$ 2,350</td>
+            <td class="table_bodyTxt ">Primary Home</td>
+            <td class="table_bodyTxt " title="Edit">
+              <span ng-reflect-ng-class="[object Object]" class="fa fa-angle-up table_editSpan">
+              </span>
+            </td>
+            <td class="table_bodyTxt asset-paddingLeft" title="Delete">
+              <span class="fa fa-trash table_deleteSpan"></span>
+            </td>
+          </tr>
+          <tr class="table_row add_clickForRow">
+            <td class="table_bodyTxt  asset-paddingLeftcustom" ng-reflect-title="John Hoimeonwer" title="John Hoimeonwer">
+              <span class="fa fa-user"></span>
+            </td>
+            <td class="table_bodyTxt  asset-paddingLeft">258 Milford St
+              <br>Glendale, CA 91202</td>
+            <td class="table_bodyTxt table_colrightAlign">$ 800,000</td>
+            <td class="table_bodyTxt table_colrightAlign">$ 2,750</td>
+            <td class="table_bodyTxt ">Investment</td>
+            <td class="table_bodyTxt " title="Edit">
+              <span ng-reflect-ng-class="[object Object]" class="fa fa-angle-up table_editSpan">
+              </span>
+            </td>
+            <td class="table_bodyTxt asset-paddingLeft" title="Delete">
+              <span class="fa fa-trash table_deleteSpan"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="Add_Row_contDiv">
+        <span class="Add_detail_span">+Add Another Property</span>
+      </div>
+      <div>
+        <span class="assetHeadSpan">Edit REO for John Homeonwer</span>
+        <div class="onerow">
+          <mat-form-field class="matformfield">
+            <input class="form-control" type="text" matInput placeholder="Address" [(ngModel)]="placeholder" name="">
+          </mat-form-field>
+          <mat-form-field class="matformfield">
+            <input class="form-control" type="text" matInput placeholder="Zip" [(ngModel)]="placeholder" name="">
+          </mat-form-field>
+        </div>
+        <div class="onerow">
+          <mat-form-field class="matformfield">
+            <input class="form-control" type="text" matInput placeholder="City" [(ngModel)]="placeholder" name="">
+          </mat-form-field>
+          <mat-form-field class="matformfield">
+            <input class="form-control" type="text" matInput placeholder="State" [(ngModel)]="placeholder" name="">
+          </mat-form-field>
+        </div>
+        <div class="reoBorderDiv">&nbsp;</div>
+        <div class="onerow">
+          <mat-checkbox class="form-checkbox" [(ngModel)]="placeholder" name="SelfEmployedFlag">Subject Property </mat-checkbox>
+          <mat-checkbox class="form-checkbox" [(ngModel)]="placeholder" name="SelfEmployedFlag">Current Residence </mat-checkbox>
+        </div>
+        <div class="onerow">
+          <mat-form-field class="matformfield">
+            <mat-select class="form-control matformfield" name="" [(ngModel)]="placeholder" placeholder="Property Address" required>
+              <mat-option>Select One</mat-option>
+              <mat-option value="AlimonyChildSupport">Single Family Residence</mat-option>
+              <mat-option value="MillitaryBase">One to Four Units</mat-option>
+              <mat-option value="MillitaryBase">Condo</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="matformfield">
+            <mat-select class="form-control matformfield" name="" [(ngModel)]="placeholder" placeholder="Property Address" required>
+              <mat-option>Select One</mat-option>
+              <mat-option value="AlimonyChildSupport">Sold</mat-option>
+              <mat-option value="MillitaryBase">Pending Sale</mat-option>
+              <mat-option value="MillitaryBase">Rental</mat-option>
+              <mat-option value="MillitaryBase">Primary Home</mat-option>
+              <mat-option value="MillitaryBase">Retained</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-buttons">
+  <button mat-raised-button class="fullLoanApp-secondary-button fullLoanApp-button" (click)="saveEmploymentIncome('previous')">Previous</button>
+  <button mat-raised-button class="fullLoanApp-primary-button fullLoanApp-button" (click)="saveEmploymentIncome('next')">Next</button>
+</div>
